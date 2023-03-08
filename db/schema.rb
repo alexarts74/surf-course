@@ -10,8 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_08_132218) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "surfboards", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
+    t.string "level"
+    t.float "volume"
+    t.float "dimension_length"
+    t.float "dimension_height"
+    t.float "dimension_thickness"
+    t.float "price"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wetsuits", force: :cascade do |t|
+    t.string "url"
+    t.string "name"
+    t.float "thickness"
+    t.string "zip"
+    t.float "price"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
