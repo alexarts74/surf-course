@@ -20,20 +20,33 @@ loop do
     element = html_doc.search(".product-features>ul>li")[2]
     volume = element.children.last.text.strip.to_f
     element = html_doc.search(".product-features>ul>li")[5]
-    dimension_length = element.children.last.text.strip.split('x').first.gsub(/ft /,".").strip.to_f
+    dimension_length = element.children.last.text.strip.split('x').first&.gsub(/ft /,".")&.strip&.to_f
     element = html_doc.search(".product-features>ul>li")[5]
-    dimension_height = element.children.last.text.strip.split('x')[1].gsub(/ft /,".").strip.to_f
-    element = html_doc.search(".product-features>ul>li")[5]
-    dimension_thickness = element.children.last.text.strip.split('x')[2].gsub(/ft /,".").strip.to_f
+    dimension_height = element.children.last.text.strip.split('x')[1]&.gsub(/ft /,".")&.strip&.to_f
+    dimension_thickness = html_doc.search(".product-features>ul>li")[5].children.last.text.strip.split('x')[2]&.gsub(/ft /,".")&.strip&.to_f
     price = html_doc.search(".regular-price")
     price = price.text.strip.gsub(/€/,"").to_f
     image = html_doc.search(".image-zoom>img")
     image = image.first.attributes["src"].value
 
-    Surfboard.create(url: url, name: name, level: level, volume: volume, dimension_length: dimension_length, dimension_height: dimension_height, dimension_thickness: dimension_thickness, price: price, image: image)
+    # datas = {
+    #   url: url,
+    #   name: name,
+    #   level: level,
+    #   volume: volume,
+    #   dimension_length: dimension_length,
+    #   dimension_height: dimension_height,
+    #   dimension_thickness: dimension_thickness,
+    #   price: price,
+    #   image: image
+    # }
+    # ap datas
+
+    # Surfboard.create(url: url, name: name, level: level, volume: volume, dimension_length: dimension_length, dimension_height: dimension_height, dimension_thickness: dimension_thickness, price: price, image: image)
 
     sleep(0.5)
   end
+  # binding.pry
    if i == 5
      break
    end
@@ -65,11 +78,21 @@ loop do
 
     end
 
-    Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
+
+    # datas = {
+    #   url: url,
+    #   name: name,
+    #   thickness: thickness,
+    #   zip: zip,
+    #   price: price,
+    #   image: image
+    # }
+    # ap datas
+
+    # Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
     sleep(0.5)
   end
     if i == 3
       break
     end
 end
-
