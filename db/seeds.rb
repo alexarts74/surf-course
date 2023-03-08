@@ -1,5 +1,7 @@
 require "open-uri"
 require "nokogiri"
+Surfboard.destroy_all
+Wetsuit.destroy_all
 
 i = 0
 loop do
@@ -42,7 +44,7 @@ loop do
     # }
     # ap datas
 
-    # Surfboard.create(url: url, name: name, level: level, volume: volume, dimension_length: dimension_length, dimension_height: dimension_height, dimension_thickness: dimension_thickness, price: price, image: image)
+    Surfboard.create(url: url, name: name, level: level, volume: volume, dimension_length: dimension_length, dimension_height: dimension_height, dimension_thickness: dimension_thickness, price: price, image: image)
 
     sleep(0.5)
   end
@@ -77,6 +79,8 @@ loop do
       price = html_doc.search(".special-price").first.children[3].children.text.strip.gsub(/€/,"").to_f
 
     end
+    image = html_doc.search(".image-zoom>img")
+    image = image.first.attributes["src"].value
 
 
     # datas = {
@@ -89,7 +93,7 @@ loop do
     # }
     # ap datas
 
-    # Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
+    Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
     sleep(0.5)
   end
     if i == 3
