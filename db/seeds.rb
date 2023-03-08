@@ -65,13 +65,11 @@ loop do
 
     end
 
-    image = html_doc.search(".image-zoom>img")
-    image = image.first.attributes["src"].value
-
     Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
     sleep(0.5)
   end
-    if i == 5
+    if i == 3
       break
     end
 end
+
