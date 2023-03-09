@@ -1,5 +1,6 @@
 require "open-uri"
 require "nokogiri"
+
 Surfboard.destroy_all
 Wetsuit.destroy_all
 
@@ -31,27 +32,18 @@ loop do
     image = html_doc.search(".image-zoom>img")
     image = image.first.attributes["src"].value
 
-    # datas = {
-    #   url: url,
-    #   name: name,
-    #   level: level,
-    #   volume: volume,
-    #   dimension_length: dimension_length,
-    #   dimension_height: dimension_height,
-    #   dimension_thickness: dimension_thickness,
-    #   price: price,
-    #   image: image
-    # }
-    # ap datas
-
     Surfboard.create(url: url, name: name, level: level, volume: volume, dimension_length: dimension_length, dimension_height: dimension_height, dimension_thickness: dimension_thickness, price: price, image: image)
-
     sleep(0.5)
   end
-  # binding.pry
-   if i == 5
+
+   if i == 10
      break
    end
+end
+
+def zip?(html_doc)
+  element = html_doc.search(".product-features>ul>li")[3]
+  element.children.first.text.strip == "Zip"
 end
 
 i = 0
@@ -69,31 +61,19 @@ loop do
     name = element.children.to_s.strip
     element = html_doc.search(".product-features>ul>li")[1]
     thickness = element.children.last.text.strip
-    element = html_doc.search(".product-features>ul>li")[3]
-    zip = element.children.last.text.strip
+
+    next unless zip?(html_doc)
+    zip = html_doc.search(".product-features>ul>li")[3].children.last.text.strip
 
     if html_doc.search(".regular-price").present?
       price = html_doc.search(".regular-price").first.children[1].text.gsub(/€/,"").to_f
-
     else
       price = html_doc.search(".special-price").first.children[3].children.text.strip.gsub(/€/,"").to_f
-
     end
     image = html_doc.search(".image-zoom>img")
     image = image.first.attributes["src"].value
 
-
-    # datas = {
-    #   url: url,
-    #   name: name,
-    #   thickness: thickness,
-    #   zip: zip,
-    #   price: price,
-    #   image: image
-    # }
-    # ap datas
-
-    Wetsuit.create(url: url, name: name, thickness: thickness, zip: zip, price: price, image: image)
+    Wetsuit.create!(url:, name:, thickness:, zip:, price:, image:)
     sleep(0.5)
   end
     if i == 3
