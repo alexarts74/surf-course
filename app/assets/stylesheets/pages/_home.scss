@@ -1,1 +1,53 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.maintitle {
+  margin-top: 5%;
+  font-family: pacifico;
+  font-size: 80px;
+  justify-content: center;
+  color: #133C65;
+  padding-bottom: 5%;
+  display: flex;
+}
+
+.container {
+  background-color: #FFFFFF;
+  margin: 0% 10% 5%;
+}
+
+h1 {
+  color: #133C65;
+}
+
+h2 {
+  color: #133C65;
+}
+
+h3 {
+  color: #133C65;
+}
+
+.home-page-icon {
+  height: 150px;
+}
+
+.card {
+  border: none;
+}
+
+.footer-pattern {
+  border-image-repeat: stretch;
+  opacity: 80%;
+  margin-top: auto;
+  display: flex;
+  width: 100%;
+  padding-top: 2%;
+}

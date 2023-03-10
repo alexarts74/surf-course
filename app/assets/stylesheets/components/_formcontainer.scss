@@ -1,0 +1,18 @@
+.formcontainer {
+  padding: 5% 25% 10%;
+  justify-content: center;
+}
+
+.results-image {
+  width: 250px;
+  height: fit-content;
+  display: flex;
+}
+
+h2, .formcontainer {
+  text-align: center;
+}
+
+p, .formcontainer {
+  text-align: justify;
+}
