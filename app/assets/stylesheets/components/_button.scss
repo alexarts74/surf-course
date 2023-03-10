@@ -54,3 +54,17 @@
   color: #ffffff;
   padding: 4px 12px;
 }
+
+.btn-form-navy {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: $navy;
+  transition: background 0.3s ease;
+}
+
+.btn-form-navy:hover {
+  background: #133C65;
+  color: #ffffff;
+  padding: 4px 12px;
+}
