@@ -2,7 +2,11 @@ class PagesController < ApplicationController
   def home
   end
 
-  def test
+  def form
+
+  end
+
+  def resultats
 
   end
 end
