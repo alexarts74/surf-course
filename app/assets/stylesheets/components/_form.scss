@@ -1,5 +1,5 @@
 label {
-  color: grey;
+  color: black;
 }
 
 .form {
@@ -8,5 +8,12 @@ label {
 }
 
 .text-input {
-  border-bottom: 1px solid black;
+  border-radius: 50px;
+  color: $navy;
+  background-color: white;
+  border: 1px solid #133C65;
+  padding: 3px 3px 3px 3px;
+  width: 200px;
+  margin-top: 15px;
+  text-indent: 10px;
 }
