@@ -1,17 +1,18 @@
 class GetBoardsFromCriteria < ApplicationService
 
-  def initialize(weight, level, waves, objective, volume)
-    @weight = weight
-    @level = level
-    @waves = waves
-    @objective = objective
-    @volume = volume
+  def initialize(params)
+    @weight = params[:weight].to_i
+    @level = params[:level]
+    @waves = params[:waves]
+    @objective = params[:objective]
+    @volume = params[:volume]
   end
 
   def call
-    if @level == 'beginner'
+    case @level
+    when "beginner"
       beginner_boards
-    elsif @level == 'intermediaire'
+    when 'intermediaire'
       medium_boards
     else
       advanced_boards

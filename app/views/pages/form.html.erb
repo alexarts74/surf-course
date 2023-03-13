@@ -3,69 +3,64 @@
     <h3>Quelques questions pour te connaître</h3>
   </div>
 
-    <%= form_with model: Surfboard.new, class: "form" do |f| %>
-      <%= f.label 'Quel est ton prénom?' %>
-      <%= f.text_field :name, class: "text-input" %>
-        <br>
-        <%= f.label :gender, 'Genre' %>
-        <br>
-        <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>homme</button>
-          <button type="button" class="btn btn-form" .text-center>femme</button>
-        </div>
+  <%= form_with url: "/results", method: :get do |f| %>
 
-        <div class="slidecontainer">
-        <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
-          <input :weight type="range" min="1" max="200" value="70" class="slider" id="myRange"> <br> <br>
-        </div>
+    <%= f.label :gender, "Etes-vous un(e) ?" %><br />
 
-        <div class="slidecontainer">
-        <%= f.label :size, 'Quel est ta taille ? (cm)' %> <br><br>
-          <input :size type="range" min="1" max="200" value="70" class="slider" id="myRange">
-        </div>
+    <%= f.label :gender, "Homme", value: "men"%>
+    <%= f.radio_button :gender, "men"  %>
+    <%= f.label :gender, "Femme", value: "women" %>
+    <%= f.radio_button :gender, "women" %>
 
-        <br>
+    <br>
+    <%= f.label 'Quel est ton poid ?' %>
+    <%= f.text_field :weight, class: "text-input" %>
 
-        <%= f.label :level, 'Niveau de surf' %>
-        <br>
-        <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>débutant(e)</button>
-          <button type="button" class="btn btn-form" .text-center>intermédiaire</button>
-          <button type="button" class="btn btn-form" .text-center>avancé(e)</button>
-        </div>
+    <br>
+    <%= f.label 'Quel est ta taille ?' %>
+    <%= f.text_field :size, class: "text-input" %>
 
-        <%= f.label :objective, 'Quel est ton objectif ?' %>
-        <br>
-        <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>Plaisir</button>
-          <button type="button" class="btn btn-form" .text-center>Performance</button>
-        </div>
+    <br>
+    <%= f.label :level, "Quel est votre niveau ?" %><br />
+    <%= f.label :level, "Débutant", value: "Débutant"%>
+    <%= f.radio_button :level, "Débutant"  %>
+    <%= f.label :level, "Intermédiaire", value: "Intermédiaire" %>
+    <%= f.radio_button :level, "Intermédiaire" %>
+    <%= f.label :level, "Confirmé", value: "Confirmé" %>
+    <%= f.radio_button :level, "Confirmé" %>
 
-        <div class="slidecontainer">
-        <p>Tu surfs combien de fois par mois?</p>
-          <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
-        </div>
 
-        <%= f.label :waves, 'Tu préfères quels types de vagues ?' %>
-        <br>
-        <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>Molle</button>
-          <button type="button" class="btn btn-form" .text-center>Creuse</button>
-        </div>
+    <br>
+    <%= f.label :waves, "Quel type de vagues tu surfes ?" %><br />
+    <%= f.label :waves, "Molles", value: "Molles"%>
+    <%= f.radio_button :waves, "Molles"  %>
+    <%= f.label :waves, "Creuses", value: "Creuses" %>
+    <%= f.radio_button :waves, "Creuses" %>
 
-        <%= f.label :temperature, "Temperature de l'eau (celsius) ?" %>
 
-        <select class="form-select" aria-label="Default select example">
-          <option value="1">5-13</option>
-          <option value="2">14-20</option>
-          <option value="3">1-20</option>
-        </select>
+    <br>
+    <%= f.label :objective, "Quel est ton objectif ?" %><br />
+    <%= f.label :objective, "Plaisir", value: "Plaisir"%>
+    <%= f.radio_button :objective, "Plaisir"  %>
+    <%= f.label :objective, "Performance", value: "Performance" %>
+    <%= f.radio_button :objective, "Performance" %>
 
-      <%# replace with form action - submit %>
-      <div class="d-flex justify-content-center">
-        <a href=resultats class="btn btn-flat" role="button" aria-pressed="true">voir les résultats</a>
-      </div>
-    <% end %>
+     <br>
+    <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %><br />
+    <%= f.label :temperature, "5 - 13", value: "5 - 13"%>
+    <%= f.radio_button :temperature, "5 - 13"  %>
+    <%= f.label :temperature, "13 - 20", value: "13 - 20" %>
+    <%= f.radio_button :temperature, "13 - 20" %>
+    <%= f.label :temperature, "20 et +", value: "20 et +" %>
+    <%= f.radio_button :temperature, "20 et +" %>
+
+    <%= f.submit %>
+
+  </div>
+</div>
+
+
+  <% end %>
 
   </div>
 </div>

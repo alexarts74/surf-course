@@ -1,0 +1,14 @@
+<div class="formcontainer">
+
+  <div class="row col-12">
+    <h2>Voici ta planche de surf idéale !</h2>
+  </div>
+
+  <% @boards.each do |board| %>
+  <%= board.name %>
+  <% end %>
+
+   <% @wetsuits.each do |wetsuit| %>
+  <%= wetsuit.name %>
+  <% end %>
+</div>
