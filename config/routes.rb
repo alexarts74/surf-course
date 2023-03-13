@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'stimulus/FormDesign'
   root to: "pages#home"
   get "form", to: "pages#form"
   get "results", to: "pages#results"
