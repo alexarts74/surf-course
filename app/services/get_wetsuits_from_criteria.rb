@@ -1,8 +1,8 @@
 class GetWetsuitsFromCriteria < ApplicationService
-  def initialize(size, gender, temperature)
-    @size = size
-    @gender = gender
-    @temperature = temperature
+  def initialize(params)
+    @size = params[:size]
+    @gender = params[:gender]
+    @temperature = params[:temperature].to_i
   end
 
   def call

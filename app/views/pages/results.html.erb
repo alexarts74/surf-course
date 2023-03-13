@@ -1,4 +1,3 @@
-
 <div class="formcontainer">
       <div class="row">
           <div class="col-12"><h2>Voici ta planche de surf idéale !</h2></div>
@@ -18,5 +17,14 @@
         <br>
         This wetsuit is like a second skin, except that it's made of neoprene and makes you look like a seal.</p></div>
     </div>
+
+
+    <% @boards.each do |board| %>
+    <%= board.name %>
+    <% end %>
+
+    <% @wetsuits.each do |wetsuit| %>
+    <%= wetsuit.name %>
+    <% end %>
   </div>
 </div>
