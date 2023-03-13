@@ -11,14 +11,6 @@
         </div>
       </div>
 
-    <div class="row">
-        <div class="col-12"><p>This surfboard is absolutely amazing! Its vibrant colors and smooth lines make it look like it's just begging to be taken out for a ride. The way it glides effortlessly over the waves is truly a sight to behold.
-        <br>
-        <br>
-        This wetsuit is like a second skin, except that it's made of neoprene and makes you look like a seal.</p></div>
-    </div>
-
-
     <% @boards.each do |board| %>
     <%= board.name %>
     <% end %>
@@ -26,5 +18,32 @@
     <% @wetsuits.each do |wetsuit| %>
     <%= wetsuit.name %>
     <% end %>
+
+      <div class="row">
+
+      <% if params[:weight].present? && params[:size].present? %>
+        <p>Cette planche est parfaite pour un poid de <%= params[:weight] %>kg et une taille de <%= params[:size] %>cm.</p>
+      <% else %>
+      <% end %>
+
+      <% if params[:level].present? && params[:waves].present? %>
+        <p>Pour un <%= params[:level].downcase %> surfer tu seras capable de surfer des super <%= params[:waves] %>s vagues !</p>
+      <% else %>
+      <% end %>
+
+      <% if params[:objective].present? %>
+       <p>Cette planche a été sélectionnée pour te donner <%= params[:objective].downcase %>.</p>
+      <% else %>
+      <% end %>
+
+      <% if params[:temperature].present? %>
+       <p>Ta combi a été sélectionnée pour te rendre le plus comfortable et te soutenir le mieux selon le température d'eau.</p>
+      <% else %>
+      <% end %>
+
+      <%# ALEX PLZ HELP  %>
+
+
+      </div>
   </div>
 </div>
