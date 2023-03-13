@@ -1,6 +1,6 @@
 class GetBoardsFromCriteria < ApplicationService
 
-  def initialize(weight:, price:, level:, waves:, objective:, volume:)
+  def initialize(weight, price, level, waves, objective, volume)
     @weight = weight
     @price = price
     @level = level
