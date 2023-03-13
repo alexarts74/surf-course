@@ -76,7 +76,7 @@ loop do
     Wetsuit.create!(url:, name:, thickness:, zip:, price:, image:)
     sleep(0.5)
   end
-    if i == 3
+    if i == 6
       break
     end
 end
