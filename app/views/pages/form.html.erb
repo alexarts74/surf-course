@@ -46,6 +46,17 @@
         </div>
       </div>
 
+      <div class="card">
+        <%= f.label :waves, 'Quelles types de vagues ?' %>
+        <br>
+
+        <%= f.label :waves, "molles", value: "molle"%>
+        <%= f.radio_button :waves, "molle"  %>
+        <%= f.label :waves, "creuses", value: "creuse" %>
+        <%= f.radio_button :waves, "creuse" %>
+      </div>
+
+
       <%= f.label :objective, 'Quel est ton objectif ?' %>
       <br>
       <div class="container d-flex justify-content-between">
@@ -54,15 +65,6 @@
         <%= f.label :objective, "Performance", value: "Performance" %>
         <%= f.radio_button :objective, "Performance" %>
       </div>
-
-
-      <div class="card">
-        <div class="slidecontainer">
-          <p>Tu surfs combien de fois par mois?</p>
-          <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
-        </div>
-      </div>
-
 
 
       <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %><br />
