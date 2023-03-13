@@ -1,71 +1,99 @@
-<div class="formcontainer">
-  <div class="text-align">
-    <h3>Quelques questions pour te connaître</h3>
-  </div>
-
-    <%= form_with model: Surfboard.new, class: "form" do |f| %>
+<div class="container">
+    <div class="card">
+      <div class="text-align">
+        <h3>Quelques questions pour te connaître</h3>
+      </div>
+    </div>
+    <div class="card">
+      <%= form_with model: Surfboard.new, class: "form" do |f| %>
       <%= f.label 'Quel est ton prénom?' %>
       <%= f.text_field :name, class: "text-input" %>
         <br>
-        <%= f.label :gender, 'Genre' %>
-        <br>
-        <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>homme</button>
-          <button type="button" class="btn btn-form" .text-center>femme</button>
-        </div>
 
+    <div class="card">
+      <%= f.label :gender, 'Genre' %>
+
+        <br>
+      <select class="form-select" aria-label="Default select example">
+        <option value="homme">homme</option>
+        <option value="femme">femme</option>
+
+      </select>
+    </div>
+
+      <div class="card">
         <div class="slidecontainer">
         <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
           <input :weight type="range" min="1" max="200" value="70" class="slider" id="myRange"> <br> <br>
         </div>
+      </div>
 
+      <div class="card">
         <div class="slidecontainer">
+
         <%= f.label :size, 'Quel est ta taille ? (cm)' %> <br><br>
           <input :size type="range" min="1" max="200" value="70" class="slider" id="myRange">
         </div>
+      </div>
+      <br>
+
 
         <br>
 
         <%= f.label :level, 'Niveau de surf' %>
+
+      <div class="card">
+        <%= f.label 'Niveau de surf' %>
+
         <br>
         <div class="container d-flex justify-content-between">
           <button type="button" class="btn btn-form" .text-center>débutant(e)</button>
           <button type="button" class="btn btn-form" .text-center>intermédiaire</button>
           <button type="button" class="btn btn-form" .text-center>avancé(e)</button>
         </div>
+      </div>
 
-        <%= f.label :objective, 'Quel est ton objectif ?' %>
+  <%= f.label :objective, 'Quel est ton objectif ?' %>
         <br>
         <div class="container d-flex justify-content-between">
           <button type="button" class="btn btn-form" .text-center>Plaisir</button>
           <button type="button" class="btn btn-form" .text-center>Performance</button>
         </div>
 
+
+      <div class="card">
         <div class="slidecontainer">
         <p>Tu surfs combien de fois par mois?</p>
           <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
         </div>
+      </div>
 
         <%= f.label :waves, 'Tu préfères quels types de vagues ?' %>
+
+      <div class="card">
         <br>
         <div class="container d-flex justify-content-between">
           <button type="button" class="btn btn-form" .text-center>Molle</button>
           <button type="button" class="btn btn-form" .text-center>Creuse</button>
         </div>
+      </div>
+
 
         <%= f.label :temperature, "Temperature de l'eau (celsius) ?" %>
+
 
         <select class="form-select" aria-label="Default select example">
           <option value="1">5-13</option>
           <option value="2">14-20</option>
           <option value="3">1-20</option>
         </select>
+      </div>
 
       <%# replace with form action - submit %>
+      <div class="card">
       <div class="d-flex justify-content-center">
         <a href=resultats class="btn btn-flat" role="button" aria-pressed="true">voir les résultats</a>
       </div>
     <% end %>
-
   </div>
 </div>

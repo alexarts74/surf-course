@@ -37,17 +37,29 @@ h3 {
 
 .home-page-icon {
   height: 150px;
+  justify-content: center;
+  display: flex;
 }
 
 .card {
   border: none;
 }
 
-.footer-pattern {
+.moving-wave {
   border-image-repeat: stretch;
+  background-position: 0%;
   opacity: 80%;
   margin-top: auto;
   display: flex;
   width: 100%;
-  padding-top: 2%;
+  margin: 0 -20% 0 0;
 }
+
+// .footer-pattern {
+//   border-image-repeat: stretch;
+//   opacity: 80%;
+//   margin-top: auto;
+//   display: flex;
+//   width: 100%;
+//   padding-top: 2%;
+// }
