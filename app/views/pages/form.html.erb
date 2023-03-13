@@ -7,7 +7,7 @@
       <%= f.label 'Quel est ton prénom?' %>
       <%= f.text_field :name, class: "text-input" %>
         <br>
-        <%= f.label 'Genre' %>
+        <%= f.label :gender, 'Genre' %>
         <br>
         <div class="container d-flex justify-content-between">
           <button type="button" class="btn btn-form" .text-center>homme</button>
@@ -15,20 +15,18 @@
         </div>
 
         <div class="slidecontainer">
-        <p>Poids(kg)</p>
-          <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
+        <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
+          <input :weight type="range" min="1" max="200" value="70" class="slider" id="myRange"> <br> <br>
         </div>
 
         <div class="slidecontainer">
-        <p>Taille(cm)</p>
-          <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
+        <%= f.label :size, 'Quel est ta taille ? (cm)' %> <br><br>
+          <input :size type="range" min="1" max="200" value="70" class="slider" id="myRange">
         </div>
 
-              <br>
-        <%= f.label 'Quel type de planche' %>
         <br>
 
-        <%= f.label 'Niveau de surf' %>
+        <%= f.label :level, 'Niveau de surf' %>
         <br>
         <div class="container d-flex justify-content-between">
           <button type="button" class="btn btn-form" .text-center>débutant(e)</button>
@@ -36,20 +34,26 @@
           <button type="button" class="btn btn-form" .text-center>avancé(e)</button>
         </div>
 
+        <%= f.label :objective, 'Quel est ton objectif ?' %>
+        <br>
+        <div class="container d-flex justify-content-between">
+          <button type="button" class="btn btn-form" .text-center>Plaisir</button>
+          <button type="button" class="btn btn-form" .text-center>Performance</button>
+        </div>
+
         <div class="slidecontainer">
         <p>Tu surfs combien de fois par mois?</p>
           <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
         </div>
 
-        <%= f.label 'Tu préfères quels types de vagues' %>
+        <%= f.label :waves, 'Tu préfères quels types de vagues ?' %>
         <br>
         <div class="container d-flex justify-content-between">
-          <button type="button" class="btn btn-form" .text-center>small</button>
-          <button type="button" class="btn btn-form" .text-center>big</button>
-          <button type="button" class="btn btn-form" .text-center>wild</button>
+          <button type="button" class="btn btn-form" .text-center>Molle</button>
+          <button type="button" class="btn btn-form" .text-center>Creuse</button>
         </div>
 
-        <%= f.label "Temperature de l'eau (celsius)" %>
+        <%= f.label :temperature, "Temperature de l'eau (celsius) ?" %>
 
         <select class="form-select" aria-label="Default select example">
           <option value="1">5-13</option>
