@@ -1,64 +1,85 @@
-<div class="formcontainer">
-  <div class="text-align">
-    <h3>Quelques questions pour te connaître</h3>
+<div class="container">
+  <div class="card">
+    <div class="text-align">
+      <h3>Quelques questions pour te connaître</h3>
+    </div>
   </div>
+  <div class="card">
+    <%= form_with  url: "/results", method: :get do |f| %>
+      <div class="card">
+        <%= f.label :gender, 'Genre' %>
+        <br>
 
-  <%= form_with url: "/results", method: :get do |f| %>
+        <%= f.label :gender, "Homme", value: "men"%>
+        <%= f.radio_button :gender, "men"  %>
+        <%= f.label :gender, "Femme", value: "women" %>
+        <%= f.radio_button :gender, "women" %>
+      </div>
 
-    <%= f.label :gender, "Etes-vous un(e) ?" %><br />
+      <div class="card">
+        <div class="slidecontainer">
+          <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
+          <%= f.range_field :weight, :min=>1, :max=>200, :class=>"slider" %>
+          <br><br>
+        </div>
+      </div>
 
-    <%= f.label :gender, "Homme", value: "men"%>
-    <%= f.radio_button :gender, "men"  %>
-    <%= f.label :gender, "Femme", value: "women" %>
-    <%= f.radio_button :gender, "women" %>
+      <div class="card">
+        <div class="slidecontainer">
+          <%= f.label :size, 'Quel est ta taille ? (cm)' %> <br><br>
+          <%= f.range_field :size, :min=>120, :max=>230, :class=>"slider" %>
+        </div>
+      </div>
+      <br>
 
-    <br>
-    <%= f.label 'Quel est ton poid ?' %>
-    <%= f.text_field :weight, class: "text-input" %>
+      <div class="card">
+        <%= f.label 'Niveau de surf' %>
+        <br>
+        <div class="container d-flex justify-content-between">
+          <%= f.label :level, "Quel est votre niveau ?" %><br />
+          <%= f.label :level, "Débutant", value: "Débutant"%>
+          <%= f.radio_button :level, "Débutant"  %>
+          <%= f.label :level, "Intermédiaire", value: "Intermédiaire" %>
+          <%= f.radio_button :level, "Intermédiaire" %>
+          <%= f.label :level, "Confirmé", value: "Confirmé" %>
+          <%= f.radio_button :level, "Confirmé" %>
+        </div>
+      </div>
 
-    <br>
-    <%= f.label 'Quel est ta taille ?' %>
-    <%= f.text_field :size, class: "text-input" %>
-
-    <br>
-    <%= f.label :level, "Quel est votre niveau ?" %><br />
-    <%= f.label :level, "Débutant", value: "Débutant"%>
-    <%= f.radio_button :level, "Débutant"  %>
-    <%= f.label :level, "Intermédiaire", value: "Intermédiaire" %>
-    <%= f.radio_button :level, "Intermédiaire" %>
-    <%= f.label :level, "Confirmé", value: "Confirmé" %>
-    <%= f.radio_button :level, "Confirmé" %>
-
-
-    <br>
-    <%= f.label :waves, "Quel type de vagues tu surfes ?" %><br />
-    <%= f.label :waves, "Molles", value: "Molles"%>
-    <%= f.radio_button :waves, "Molles"  %>
-    <%= f.label :waves, "Creuses", value: "Creuses" %>
-    <%= f.radio_button :waves, "Creuses" %>
-
-
-    <br>
-    <%= f.label :objective, "Quel est ton objectif ?" %><br />
-    <%= f.label :objective, "Plaisir", value: "Plaisir"%>
-    <%= f.radio_button :objective, "Plaisir"  %>
-    <%= f.label :objective, "Performance", value: "Performance" %>
-    <%= f.radio_button :objective, "Performance" %>
-
-    <br>
-    <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %><br />
-    <%= f.label :temperature, "5 - 13", value: "5 - 13"%>
-    <%= f.radio_button :temperature, "5 - 13"  %>
-    <%= f.label :temperature, "13 - 20", value: "13 - 20" %>
-    <%= f.radio_button :temperature, "13 - 20" %>
-    <%= f.label :temperature, "20 et +", value: "20 et +" %>
-    <%= f.radio_button :temperature, "20 et +" %>
-    <%= f.submit %>
-
-  </div>
+      <%= f.label :objective, 'Quel est ton objectif ?' %>
+      <br>
+      <div class="container d-flex justify-content-between">
+        <%= f.label :objective, "Plaisir", value: "Plaisir"%>
+        <%= f.radio_button :objective, "Plaisir"  %>
+        <%= f.label :objective, "Performance", value: "Performance" %>
+        <%= f.radio_button :objective, "Performance" %>
+      </div>
 
 
-  <% end %>
+      <div class="card">
+        <div class="slidecontainer">
+          <p>Tu surfs combien de fois par mois?</p>
+          <input type="range" min="1" max="200" value="70" class="slider" id="myRange">
+        </div>
+      </div>
 
+
+
+      <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %><br />
+      <%= f.label :temperature, "5 - 13", value: "5 - 13"%>
+      <%= f.radio_button :temperature, "5 - 13"  %>
+      <%= f.label :temperature, "13 - 20", value: "13 - 20" %>
+      <%= f.radio_button :temperature, "13 - 20" %>
+      <%= f.label :temperature, "20 et +", value: "20 et +" %>
+      <%= f.radio_button :temperature, "20 et +" %>
+
+
+
+      <div class="card">
+        <div class="d-flex justify-content-center">
+          <%= f.submit "voir les résultats", class: "btn btn-flat" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

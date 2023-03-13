@@ -1,14 +1,30 @@
 <div class="formcontainer">
+      <div class="row">
+          <div class="col-12"><h2>Voici ta planche de surf idéale !</h2></div>
+      </div>
+      <div class="row">
+        <div class="col-6 d-flex justify-content-center">
+          <%= image_tag 'resultsurfboard.avif', class: 'results-image' %>
+        </div>
+        <div class="col-6">
+          <%= image_tag 'wetsuit.jpg', class: 'results-image' %>
+        </div>
+      </div>
 
-  <div class="row col-12">
-    <h2>Voici ta planche de surf idéale !</h2>
+    <div class="row">
+        <div class="col-12"><p>This surfboard is absolutely amazing! Its vibrant colors and smooth lines make it look like it's just begging to be taken out for a ride. The way it glides effortlessly over the waves is truly a sight to behold.
+        <br>
+        <br>
+        This wetsuit is like a second skin, except that it's made of neoprene and makes you look like a seal.</p></div>
+    </div>
+
+
+    <% @boards.each do |board| %>
+    <%= board.name %>
+    <% end %>
+
+    <% @wetsuits.each do |wetsuit| %>
+    <%= wetsuit.name %>
+    <% end %>
   </div>
-
-  <% @boards.each do |board| %>
-  <%= board.name %>
-  <% end %>
-
-   <% @wetsuits.each do |wetsuit| %>
-  <%= wetsuit.name %>
-  <% end %>
 </div>
