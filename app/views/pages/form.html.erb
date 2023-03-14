@@ -7,7 +7,8 @@
   <div class="card">
     <div data-controller="hello">
     <%= form_with url: "/results", method: :get do |f| %>
-      <div class="d-flex justify-content-center">
+      <div class="gender">
+        <%= f.label :gender, " Tu t'identifies en tant que ?" %>
         <%= f.radio_button :gender, "men", class: "radio" %>
         <%= f.label :gender, value: "men", class: "label-image" do %>
           <%= image_tag 'avatar_homme.png' %>
@@ -69,15 +70,25 @@
             </div>
           </div>
 
-
-            <div data-hello-target="level">
-              <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %><br />
-              <%= f.label :temperature, "5 - 13", value: "5 - 13"%>
-              <%= f.radio_button :temperature, "5 - 13"  %>
-              <%= f.label :temperature, "13 - 20", value: "13 - 20" %>
-              <%= f.radio_button :temperature, "13 - 20" %>
-              <%= f.label :temperature, "20 et +", value: "20 et +" %>
-              <%= f.radio_button :temperature, "20 et +" %>
+            <div class="justify-content-around">
+              <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %>
+              <div data-hello-target="level" class="level" >
+                <%= f.radio_button :temperature, "5 - 13", class:"radio" %>
+                <%= f.label :temperature, "5 - 13", value: "5 - 13", class:"label-image d-flex flex-column" do %>
+                  <%= image_tag 'avatar_froid.png'%>
+                  <span>5° et 13°</span>
+                <% end %>
+                <%= f.radio_button :temperature, "13 - 20", class:"radio" %>
+                <%= f.label :temperature, "13 - 20", value: "13 - 20", class:"label-image d-flex flex-column" do %>
+                  <%= image_tag 'avatar_tmp_mod.png' %>
+                  <span>13° et 20°</span>
+                <% end %>
+                <%= f.radio_button :temperature, "20 et +", class:"radio" %>
+                <%= f.label :temperature, "20 et +", value: "20 et +", class:"label-image d-flex flex-column" do %>
+                  <%= image_tag 'avatar_canicul.png' %>
+                  <span>20° et +</span>
+                <% end %>
+              </div>
             </div>
 
         <div class="card">
