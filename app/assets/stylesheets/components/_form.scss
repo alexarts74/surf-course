@@ -4,6 +4,7 @@ label {
 
 .card {
   border: none;
+  margin-bottom: 13px;
 }
 
 .form {
@@ -60,22 +61,59 @@ label {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-bottom: 22px;
+  font-weight: bold;
 }
 
 .level {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-top: 18px;
+  margin-bottom: 24px;
 }
 
 .waves {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 59px;
+  margin-top: 23px;
 }
 
 .objectif {
   display: flex;
   justify-content: center;
   gap: 50px;
+  margin-top: 23px;
 }
+
+.question-level {
+  display: flex;
+margin-top: 10px;
+font-weight: bold;
+}
+
+ .level-question {
+  justify-content: center;
+  gap: 25px;
+  display: flex;
+  margin-bottom: 18px;
+ }
+
+ .text-align {
+  margin-bottom: 17px;
+ }
+
+ .temperature {
+  margin-top: 36px;
+  font-weight: bold;
+ }
+
+ .type-wave {
+  font-weight: bold;
+ }
+
+ .objectif-bold {
+  font-weight: bold;
+  margin-top: 24px;
+ }

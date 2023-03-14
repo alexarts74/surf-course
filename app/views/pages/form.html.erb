@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="text-align">
-      <h3>Quelques questions pour te connaître</h3>
+      <h3>Salut jeune surfeur, j’ai besoin d’en savoir davantage sur toi, discutons ensemble ! </h3>
     </div>
   </div>
   <div class="card">
@@ -21,7 +21,7 @@
 
       <div class="card" data-controller="slider">
         <div class="slidecontainer">
-          <%= f.label :weight, 'Quel est ton poid ? (kg)' %>
+          <%= f.label :weight, 'Ton poids est ? (kg)' %>
           <p data-slider-target="value"></p>
           <%= f.range_field :weight, min: 1, max: 150, class: "slider", data: { action: "input->slider#update"} %>
         </div>
@@ -29,28 +29,28 @@
 
         <div class="card"  data-controller="slider">
           <div class="slidecontainer">
-          <%= f.label :weight, 'Quel est ta taille ? (cm)' %>
+          <%= f.label :weight, 'Tu mesures ? (cm)' %>
           <p data-slider-target="value"></p>
             <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update"}  %>
           </div>
         </div>
 
           <div class="card">
-            <div class="d-flex justify-content-around" >
               <div data-action="click->hello#update">
-                <%= f.label :level, "Quel est votre niveau ?" %><br/>
-                <%= f.radio_button :level, "Débutant", class:"radio", data: { hello_target: "deb" } %>
-                <%= f.label :level, "Débutant", class: "filter-level", value: "Débutant"%>
-                <%= f.radio_button :level, "Intermédiaire", class:"radio"%>
-                <%= f.label :level, "Intermédiaire", class: "filter-level", value: "Intermédiaire" %>
-                <%= f.radio_button :level, "Confirmé", class:"radio"%>
-                <%= f.label :level, "Confirmé",class: "filter-level", value: "Confirmé" %>
+                  <%= f.label :level, "Tu te sens comment sur ta planche ?", class:"question-level" %><br/>
+                <div class="level-question">
+                  <%= f.radio_button :level, "Débutant", class:"radio", data: { hello_target: "deb" } %>
+                  <%= f.label :level, "Débutant", class: "filter-level", value: "Débutant"%>
+                  <%= f.radio_button :level, "Intermédiaire", class:"radio"%>
+                  <%= f.label :level, "Intermédiaire", class: "filter-level", value: "Intermédiaire" %>
+                  <%= f.radio_button :level, "Confirmé", class:"radio"%>
+                  <%= f.label :level, "Confirmé",class: "filter-level", value: "Confirmé" %>
+                </div>
               </div>
-            </div>
           </div>
 
           <div class="card d-none" data-hello-target="level">
-              <%= f.label :waves, 'Quelles types de vagues ?'%>
+              <%= f.label :waves, 'Ton type de vagues ?', class:"type-wave"%>
             <div class="waves">
               <%= f.radio_button :waves, "molle", class:"radio"%>
               <%= f.label :waves, "Molles", class: "filter-level", value: "molle"%>
@@ -60,7 +60,7 @@
 
 
             <div data-hello-target="level">
-              <%= f.label :objective, 'Quel est ton objectif ?'%>
+              <%= f.label :objective, 'Tu es de la team ?', class:"objectif-bold"%>
               <div class="objectif">
                 <%= f.radio_button :objective, "Plaisir", class:"radio"  %>
                 <%= f.label :objective, "Plaisir", class: "filter-level", value: "Plaisir"%>
@@ -70,8 +70,8 @@
             </div>
           </div>
 
-            <div class="justify-content-around">
-              <%= f.label :temperature, "Dans quelle température d'eau as-tu l'habitude de surfer ?" %>
+            <div class="temperature">
+              <%= f.label :temperature, "Plutôt eau froide ou eau chaude ?" %>
               <div data-hello-target="level" class="level" >
                 <%= f.radio_button :temperature, "5 - 13", class:"radio" %>
                 <%= f.label :temperature, "5 - 13", value: "5 - 13", class:"label-image d-flex flex-column" do %>
@@ -80,12 +80,12 @@
                 <% end %>
                 <%= f.radio_button :temperature, "13 - 20", class:"radio" %>
                 <%= f.label :temperature, "13 - 20", value: "13 - 20", class:"label-image d-flex flex-column" do %>
-                  <%= image_tag 'avatar_tmp_mod.png' %>
+                  <%= image_tag 'avatar_mid.png' %>
                   <span>13° et 20°</span>
                 <% end %>
                 <%= f.radio_button :temperature, "20 et +", class:"radio" %>
                 <%= f.label :temperature, "20 et +", value: "20 et +", class:"label-image d-flex flex-column" do %>
-                  <%= image_tag 'avatar_canicul.png' %>
+                  <%= image_tag 'temperature-chaude.png' %>
                   <span>20° et +</span>
                 <% end %>
               </div>
