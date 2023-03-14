@@ -17,3 +17,20 @@ label {
   margin-top: 15px;
   text-indent: 10px;
 }
+
+.radio {
+  display: none;
+}
+
+.radio:checked + .label-image {
+  opacity: 1;
+}
+
+.radio + .label-image {
+  opacity: 0.5;
+  border-radius: 50%;
+}
+
+.label-image > img {
+  width: 90px;
+}
