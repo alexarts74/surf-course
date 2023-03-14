@@ -50,22 +50,22 @@
           </div>
 
           <div class="card d-none" data-hello-target="level">
-            <div >
               <%= f.label :waves, 'Quelles types de vagues ?'%>
-              <%= f.label :waves, "molles", value: "molle"%>
-              <%= f.radio_button :waves, "molle"  %>
-              <%= f.label :waves, "creuses", value: "creuse" %>
-              <%= f.radio_button :waves, "creuse" %>
+            <div class="waves">
+              <%= f.radio_button :waves, "molle", class:"radio"%>
+              <%= f.label :waves, "Molles", class: "filter-level", value: "molle"%>
+              <%= f.radio_button :waves, "creuse", class:"radio" %>
+              <%= f.label :waves, "Creuses", class: "filter-level", value: "creuse" %>
             </div>
 
 
             <div data-hello-target="level">
               <%= f.label :objective, 'Quel est ton objectif ?'%>
-              <div class="container d-flex justify-content-between">
-                <%= f.label :objective, "Plaisir", value: "Plaisir"%>
-                <%= f.radio_button :objective, "Plaisir"  %>
-                <%= f.label :objective, "Performance", value: "Performance" %>
-                <%= f.radio_button :objective, "Performance" %>
+              <div class="objectif">
+                <%= f.radio_button :objective, "Plaisir", class:"radio"  %>
+                <%= f.label :objective, "Plaisir", class: "filter-level", value: "Plaisir"%>
+                <%= f.radio_button :objective, "Performance", class:"radio" %>
+                <%= f.label :objective, "Performance", class: "filter-level", value: "Performance" %>
               </div>
             </div>
           </div>
