@@ -2,6 +2,10 @@ label {
   color: black;
 }
 
+.card {
+  border: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -62,4 +66,16 @@ label {
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.waves {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.objectif {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
