@@ -18,11 +18,17 @@
   border-radius: 4px;
   background: #133C65;
   transition: background 0.3s ease;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-flat:hover {
   background: #0f3051;
   color: white;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-gradient {
@@ -47,12 +53,18 @@
   border-radius: 20px;
   background: #FFFFFF;
   transition: background 0.3s ease;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-form:hover {
   background: #133C65;
   color: #ffffff;
   padding: 4px 12px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-form-navy {
@@ -61,10 +73,16 @@
   border-radius: 20px;
   background: $navy;
   transition: background 0.3s ease;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-form-navy:hover {
   background: #133C65;
   color: #ffffff;
   padding: 4px 12px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
