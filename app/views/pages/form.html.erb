@@ -21,27 +21,20 @@
         <% end %>
       </div>
 
-      <div class="card">
+      <div class="card" data-controller="slider">
         <div class="slidecontainer">
-          <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
-          <%= f.range_field :weight, :min=>1, :max=>200, :class=>"slider" %>
-          
+          <%= f.label :weight, 'Quel est ton poid ? (kg)' %>
+          <p data-slider-target="value"></p>
+          <%= f.range_field :weight, min: 1, max: 200, class: "slider", data: { action: "input->slider#update"} %>
           <br><br>
         </div>
       </div>
 
-        <div class="card">
+        <div class="card"  data-controller="slider">
           <div class="slidecontainer">
-            <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
-            <%= f.range_field :weight, :min=>1, :max=>200, :class=>"slider" %>
-            <br><br>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="slidecontainer">
-            <%= f.label :size, 'Quel est ta taille ? (cm)' %> <br><br>
-            <%= f.range_field :size, :min=>120, :max=>230, :class=>"slider" %>
+          <%= f.label :weight, 'Quel est ta taille ? (cm)' %>
+          <p data-slider-target="value"></p>
+            <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update"}  %>
           </div>
         </div>
         <br>
@@ -53,7 +46,7 @@
               <div data-action="click->hello#update">
                 <%= f.label :level, "Quel est votre niveau ?" %><br/>
                 <%= f.label :level, "Débutant", value: "Débutant"%>
-                <%= f.radio_button :level, "Débutant", data: {hello_target: "deb"} %>
+                <%= f.radio_button :level, "Débutant", data: { hello_target: "deb" } %>
                 <%= f.label :level, "Intermédiaire", value: "Intermédiaire" %>
                 <%= f.radio_button :level, "Intermédiaire"%>
                 <%= f.label :level, "Confirmé", value: "Confirmé" %>
