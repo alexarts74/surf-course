@@ -2,6 +2,10 @@ label {
   color: black;
 }
 
+.card {
+  border: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -35,4 +39,43 @@ label {
 
 .label-image > img {
   width: 90px;
+}
+
+.filter-level {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: #F4F4F4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio:checked + .filter-level {
+  background-color: #133C65;
+  color: white;
+}
+.gender {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.waves {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.objectif {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
