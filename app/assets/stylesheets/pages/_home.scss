@@ -5,7 +5,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-image: url('movingwave.gif');
   background-repeat:repeat-x;
   background-attachment: fixed;
   background-position: bottom;
@@ -18,7 +17,7 @@ body {
   font-size: 75px;
   text-align: center;
   color: #133C65;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
   display: flex;
 }
 
@@ -28,7 +27,7 @@ h1 {
 
 h2 {
   color: #133C65;
-  padding-bottom: 10%;
+  padding-bottom: 50px;
 }
 
 h3 {
@@ -36,15 +35,27 @@ h3 {
 }
 
 .home-page-icon {
+  margin: 0 auto;
   height: 150px;
-  display: flex;
-  padding-bottom: 5%;
+  margin-bottom: 20%;
 }
 
-.card {
-  border: none;
+
+html, body { height: 100%; }
+
+body {
+  background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+  overflow: hidden;
 }
 
+// .ocean {
+//   height: 5%;
+//   width:100%;
+//   position:absolute;
+//   bottom:0;
+//   left:0;
+//   background: #015871;
+// }
 
 
 // .moving-wave {
