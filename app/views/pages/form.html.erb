@@ -5,21 +5,26 @@
     </div>
   </div>
   <div class="card">
-    <%= form_with  url: "/results", method: :get do |f| %>
-      <div class="card">
-        <%= f.label :gender, 'Genre' %>
+    <%= form_with url: "/results", method: :get do |f| %>
+      <div class="d-flex justify-content-center">
         <br>
 
-        <%= f.label :gender, "Homme", value: "men"%>
-        <%= f.radio_button :gender, "men"  %>
-        <%= f.label :gender, "Femme", value: "women" %>
-        <%= f.radio_button :gender, "women" %>
+        <%= f.radio_button :gender, "men", class: "radio" %>
+        <%= f.label :gender, value: "men", class: "label-image" do %>
+          <%= image_tag 'avatar_homme.png' %>
+        <% end %>
+
+        <%= f.radio_button :gender, "women", class: "radio" %>
+        <%= f.label :gender, "Femme", value: "women", class:"label-image" do  %>
+          <%= image_tag 'avatar_femme.png' %>
+        <% end %>
       </div>
 
       <div class="card">
         <div class="slidecontainer">
           <%= f.label :weight, 'Quel est ton poid ? (kg)' %> <br><br>
           <%= f.range_field :weight, :min=>1, :max=>200, :class=>"slider" %>
+          
           <br><br>
         </div>
       </div>
