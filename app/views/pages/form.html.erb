@@ -8,13 +8,10 @@
     <div data-controller="hello">
     <%= form_with url: "/results", method: :get do |f| %>
       <div class="d-flex justify-content-center">
-        <br>
-
         <%= f.radio_button :gender, "men", class: "radio" %>
         <%= f.label :gender, value: "men", class: "label-image" do %>
           <%= image_tag 'avatar_homme.png' %>
         <% end %>
-
         <%= f.radio_button :gender, "women", class: "radio" %>
         <%= f.label :gender, "Femme", value: "women", class:"label-image" do  %>
           <%= image_tag 'avatar_femme.png' %>
@@ -25,8 +22,7 @@
         <div class="slidecontainer">
           <%= f.label :weight, 'Quel est ton poid ? (kg)' %>
           <p data-slider-target="value"></p>
-          <%= f.range_field :weight, min: 1, max: 200, class: "slider", data: { action: "input->slider#update"} %>
-          <br><br>
+          <%= f.range_field :weight, min: 1, max: 150, class: "slider", data: { action: "input->slider#update"} %>
         </div>
       </div>
 
@@ -37,20 +33,17 @@
             <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update"}  %>
           </div>
         </div>
-        <br>
 
           <div class="card">
-            <%= f.label 'Niveau de surf'%>
-            <br>
-            <div class="container d-flex justify-content-between" >
+            <div class="d-flex justify-content-around" >
               <div data-action="click->hello#update">
                 <%= f.label :level, "Quel est votre niveau ?" %><br/>
-                <%= f.label :level, "Débutant", value: "Débutant"%>
-                <%= f.radio_button :level, "Débutant", data: { hello_target: "deb" } %>
-                <%= f.label :level, "Intermédiaire", value: "Intermédiaire" %>
-                <%= f.radio_button :level, "Intermédiaire"%>
-                <%= f.label :level, "Confirmé", value: "Confirmé" %>
-                <%= f.radio_button :level, "Confirmé"%>
+                <%= f.radio_button :level, "Débutant", class:"radio", data: { hello_target: "deb" } %>
+                <%= f.label :level, "Débutant", class: "filter-level", value: "Débutant"%>
+                <%= f.radio_button :level, "Intermédiaire", class:"radio"%>
+                <%= f.label :level, "Intermédiaire", class: "filter-level", value: "Intermédiaire" %>
+                <%= f.radio_button :level, "Confirmé", class:"radio"%>
+                <%= f.label :level, "Confirmé",class: "filter-level", value: "Confirmé" %>
               </div>
             </div>
           </div>
@@ -58,8 +51,6 @@
           <div class="card d-none" data-hello-target="level">
             <div >
               <%= f.label :waves, 'Quelles types de vagues ?'%>
-              <br>
-
               <%= f.label :waves, "molles", value: "molle"%>
               <%= f.radio_button :waves, "molle"  %>
               <%= f.label :waves, "creuses", value: "creuse" %>
@@ -69,7 +60,6 @@
 
             <div data-hello-target="level">
               <%= f.label :objective, 'Quel est ton objectif ?'%>
-              <br>
               <div class="container d-flex justify-content-between">
                 <%= f.label :objective, "Plaisir", value: "Plaisir"%>
                 <%= f.radio_button :objective, "Plaisir"  %>
