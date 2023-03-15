@@ -1,37 +1,66 @@
-<div class="formcontainer">
-  <div class="row">
-    <div class="col-12">
-      <h2>Voici ta planche de surf idéale !</h2>
+<div class="container">
+  <h2 class="title-result">Voici ta planche de surf et ta combi idéale !</h2>
 
-      <% if params[:weight].present? && params[:size].present? %>
-        <p>Cette planche est parfaite pour un poid de <%= params[:weight] %>kg et une taille de <%= params[:size] %>cm.</p>
-      <% end %>
-      <% if params[:level].present? && params[:waves].present? %>
-        <p>Avec un niveau<%= params[:level].downcase %> tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
-      <% end %>
-      <% if params[:objective].present? %>
-        <p>Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <%= params[:objective].downcase %>.</p>
-      <% end %>
-
-      <% @boards.each do |board| %>
-        <%= board.image %>
-        <%= board.name %>
-        <%= board.dimension_length %>
-        <%= board.dimension_height %>
-        <%= board.dimension_thickness %>
-        <%= board.volume %>
-      <% end %>
-
-      <% if params[:temperature].present? %>
-        <p>Ta combi a été sélectionnée pour te rendre le plus comfortable et te soutenir le mieux selon le température d'eau.</p>
-      <% end %>
-
-      <% @wetsuits.each do |wetsuit| %>
-        <%= wetsuit.name %>
-        <%= wetsuit.thickness %>
-        <%= wetsuit.zip %>
-      <% end %>
-
-   </div>
+  <div class="conditions-1">
+    <% if params[:weight].present? && params[:size].present? %>
+      <p>Ces planches sont parfaites pour un poid de <%= params[:weight] %>kg et une taille de <%= params[:size] %>cm.</p>
+    <% end %>
+    <% if params[:level].present? && params[:waves].present? %>
+      <p>Avec un niveau <%= params[:level].downcase %> tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
+    <% end %>
+    <% if params[:objective].present? %>
+      <p>Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <%= params[:objective].downcase %>.</p>
+    <% end %>
   </div>
+
+  <div class="board-container">
+    <div class="boards">
+      <% @boards.take(10).each do |board| %>
+        <div class="board">
+          <%= image_tag board.image, width: 200, height: 250, crop: :fill, class: "image" %>
+          <div class="board-cara">
+            <p><strong>Nom : </strong> <%= board.name %></p>
+            <p><strong>Dimensions de la planche : </strong> <%= board.dimension_length %>ft/ <%= board.dimension_height %>/ <%= board.dimension_thickness %></p>
+            <p><strong>Volume de la planche : </strong> <%= board.volume %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="conditions-2">
+    <% if params[:temperature].present? %>
+      <p>Ta combi a été sélectionnée pour ton confort entre <%= params[:temperature] %> degrés.</p>
+    <% end %>
+  </div>
+
+  <div class="board-container">
+    <div class="boards">
+      <% @wetsuits.take(10).each do |wetsuit| %>
+        <div class="wetsuit">
+          <%= image_tag wetsuit.image, width: 200, height: 250, crop: :fill, class: "image"%>
+          <div class="board-cara">
+            <p><strong>Nom : </strong><%= wetsuit.name %></p>
+            <p><strong>Epaisseur de la combinaison : </strong> <%= wetsuit.thickness %></p>
+            <p><strong>Emplacement du zip : </strong> <%= wetsuit.zip %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
 </div>
+
+
+
+
+<%# <div class="pair-container"> %>
+  <%# <div class="pairs"> %>
+    <%# <% @pairs.each do |pair| %>
+      <%# <div class="pair"> %>
+        <%# <p><%= pair[:board].name %>
+        <%# <%= pair[:wetsuit].name</p> %>
+      <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
+<%# </div> %>

@@ -10,9 +10,9 @@ class GetBoardsFromCriteria < ApplicationService
 
   def call
     case @level
-    when "beginner"
+    when "Débutant"
       beginner_boards
-    when 'intermediaire'
+    when 'Intermédiaire'
       medium_boards
     else
       advanced_boards
