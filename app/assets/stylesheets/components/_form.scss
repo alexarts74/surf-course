@@ -2,16 +2,23 @@ label {
   color: black;
 }
 
+.card {
+  border: none;
+  margin-bottom: 13px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  opacity: 10%;
 }
 
 .text-input {
   border-radius: 50px;
   color: $navy;
   background-color: white;
-  border: 1px solid #133C65;
+  border: 1px solid $navy;
   padding: 3px 3px 3px 3px;
   width: 200px;
   margin-top: 15px;
@@ -34,3 +41,80 @@ label {
 .label-image > img {
   width: 90px;
 }
+
+.filter-level {
+  text-align: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: #F4F4F4;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  // align-items: center;
+  // justify-content: center;
+  width: 100%;
+}
+
+.radio:checked + .filter-level {
+  background-color: $navy;
+  color: white;
+}
+.gender {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 22px;
+  font-weight: bold;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.waves {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 23px;
+}
+
+.objectif {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 23px;
+}
+
+.question-level {
+  display: flex;
+margin-top: 10px;
+font-weight: bold;
+}
+
+ .level-question {
+  justify-content: center;
+  gap: 25px;
+  display: flex;
+  margin-bottom: 18px;
+ }
+
+ .text-align {
+  margin-bottom: 17px;
+ }
+
+ .temperature {
+  margin-top: 36px;
+  font-weight: bold;
+ }
+
+ .type-wave {
+  font-weight: bold;
+ }
+
+ .objectif-bold {
+  font-weight: bold;
+  margin-top: 24px;
+ }

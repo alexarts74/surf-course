@@ -3,6 +3,7 @@
 body {
   background-color: white;
   min-height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-repeat:repeat-x;
@@ -10,69 +11,88 @@ body {
   background-position: bottom;
 }
 
+.content-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.container-home {
+  height: 95%;
+  justify-content: center;
+}
 
 .maintitle {
   padding-top: 10%;
   font-family: pacifico;
-  font-size: 75px;
+  font-size: 50px;
   text-align: center;
-  color: #133C65;
   padding-bottom: 13%;
   display: flex;
+  color: #ffffff;
 }
 
-h1 {
-  margin-top: 40px;
-  color: #133C65;
-}
-
-h2 {
-  color: #133C65;
-  padding-bottom: 50px;
+.header2 {
+  color: $navy;
 }
 
 h3 {
-  color: #133C65;
+  color: $navy;
 }
-
-.home-page-icon {
-  margin: 0 auto;
-  height: 150px;
-  margin-bottom: 20%;
-}
-
 
 html, body { height: 100%; }
 
 // body {
 //   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
 // }
+.home {
+  height: 100vh;
+  background-image: url('surferphoto');
+  background-size: cover;
+  background-position: -20px -40px;
+  background-repeat: no-repeat;
+}
 
-// .ocean {
-//   height: 5%;
-//   width:100%;
-//   position:absolute;
-//   bottom:0;
-//   left:0;
-//   background: #015871;
-// }
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg);
+  position: fixed;
+  bottom: -374px;
+  left: 0;
+  width: 10880px;
+  height: 680px;
+  animation: wave 9s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+  filter: brightness(0) invert(1);
+}
 
+#wave2 {
+  animation: wave 9s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite;
+  animation-delay: .3s;
+}
 
-// .moving-wave {
-//   border-image-repeat: stretch;
-//   background-position: 0%;
-//   opacity: 80%;
-//   margin-top: auto;
-//   display: flex;
-//   width: 100%;
-//   margin: 0 -20% 0 0;
-// }
+.ocean {
+  height: 113px;
+  width: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 
-// .footer-pattern {
-//   border-image-repeat: stretch;
-//   opacity: 80%;
-//   margin-top: auto;
-//   display: flex;
-//   width: 100%;
-//   padding-top: 2%;
-// }
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+.surfing-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

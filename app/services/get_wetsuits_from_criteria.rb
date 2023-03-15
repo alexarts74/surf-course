@@ -16,7 +16,7 @@ class GetWetsuitsFromCriteria < ApplicationService
   end
 
   def wetsuits_cold
-    if @gender == "homme"
+    if @gender == "men"
       Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 5")
     else
       Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 5")
@@ -24,7 +24,7 @@ class GetWetsuitsFromCriteria < ApplicationService
   end
 
   def wetsuits_basic
-    if @gender == "homme"
+    if @gender == "men"
       Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 3 AND thickness < 5")
     else
       Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 3 AND thickness < 5")
@@ -32,7 +32,7 @@ class GetWetsuitsFromCriteria < ApplicationService
   end
 
   def wetsuits_hot
-    if @gender == "homme"
+    if @gender == "men"
       Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 0 AND thickness < 3")
     else
       Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 0 AND thickness < 3")
