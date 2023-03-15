@@ -22,6 +22,7 @@ body {
 
 .container-home {
   height: 95%;
+  justify-content: center;
 }
 
 .maintitle {
@@ -37,7 +38,17 @@ h1 {
 }
 
 .header2 {
-  color: #133C65;
+  color: $navy;
+}
+
+h3 {
+  color: $navy;
+}
+
+.home-page-icon {
+  margin: 0 auto;
+  height: 150px;
+  margin-bottom: 20%;
 }
 
 .home {
@@ -45,8 +56,9 @@ h1 {
   background-image: url('surferphoto');
   background-size: cover;
   background-position: -20px -40px;
-  background-repeat: no-repeat
+  background-repeat: no-repeat;
 }
+
 .wave {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg);
   position: fixed;
