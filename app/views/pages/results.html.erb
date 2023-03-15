@@ -21,7 +21,8 @@
           <div class="board-cara">
             <p><strong>Nom : </strong> <%= board.name %></p>
             <p><strong>Dimensions de la planche : </strong> <%= board.dimension_length %>ft/ <%= board.dimension_height %>/ <%= board.dimension_thickness %></p>
-            <p><strong>Volume de la planche : </strong> <%= board.volume %></p>
+            <p class="last-element"><strong>Volume de la planche : </strong> <%= board.volume %></p>
+            <a class="button-card" href="https://www.boardshop.co.uk/surfboards">Je choisi cette planche !</a>
           </div>
         </div>
       <% end %>
@@ -35,24 +36,25 @@
   </div>
 
   <div class="board-container">
-    <div class="boards">
+    <div class="wetsuits">
       <% @wetsuits.take(10).each do |wetsuit| %>
         <div class="wetsuit">
           <%= image_tag wetsuit.image, width: 200, height: 250, crop: :fill, class: "image"%>
           <div class="board-cara">
             <p><strong>Nom : </strong><%= wetsuit.name %></p>
             <p><strong>Epaisseur de la combinaison : </strong> <%= wetsuit.thickness %></p>
-            <p><strong>Emplacement du zip : </strong> <%= wetsuit.zip %></p>
+            <p class="last-element"><strong>Emplacement du zip : </strong> <%= wetsuit.zip %></p>
+            <a class="button-card" href="https://www.boardshop.co.uk/wetsuits">Je choisi cette combi !</a>
           </div>
         </div>
       <% end %>
     </div>
   </div>
-
 </div>
 
-
-
+<div class="footer-result">
+  <%= image_tag 'logolilguy.png', class: "img-footer"%>
+</div>
 
 <%# <div class="pair-container"> %>
   <%# <div class="pairs"> %>
