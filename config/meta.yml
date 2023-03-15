@@ -1,0 +1,5 @@
+meta_name: "The Surf Course"
+meta_title: "The Surf Course - trouve ta planche et ta combi"
+meta_description: "Trouve ta planche, ta combi et rejoignons-nous à l'océan"
+meta_image: "ogimage.png" # should exist in `app/assets/images/`
+# twitter_account: "@thesurfcourse"   # required for Twitter Cards
