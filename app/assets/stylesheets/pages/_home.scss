@@ -3,7 +3,7 @@
 body {
   background-color: white;
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-repeat:repeat-x;
@@ -23,6 +23,7 @@ body {
 
 .container-home {
   height: 95%;
+  justify-content: center;
 }
 
 .maintitle {
@@ -38,18 +39,12 @@ h1 {
 }
 
 .header2 {
-  color: #133C65;
+  color: $navy;
 }
 
 h3 {
-  color: #133C65;
+  color: $navy;
 }
-
-// .btn-flat {
-  // position:relative;
-  // margin-top:100%;
-  // z-index: 10;
-// }
 
 .home-page-icon {
   margin: 0 auto;
@@ -62,6 +57,7 @@ h3 {
   background-image: url('surferphoto');
   background-size: cover;
   background-position: -20px -40px;
+  background-repeat: no-repeat;
 }
 .wave {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg);
