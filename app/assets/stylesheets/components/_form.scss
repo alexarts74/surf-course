@@ -49,8 +49,9 @@ label {
   border: none;
   background-color: #F4F4F4;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
+  width: 100%;
 }
 
 .radio:checked + .filter-level {
@@ -76,14 +77,14 @@ label {
 .waves {
   display: flex;
   justify-content: center;
-  gap: 59px;
+  gap: 32px;
   margin-top: 23px;
 }
 
 .objectif {
   display: flex;
   justify-content: center;
-  gap: 50px;
+  gap: 32px;
   margin-top: 23px;
 }
 
