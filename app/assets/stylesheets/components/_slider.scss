@@ -7,7 +7,7 @@
   -webkit-appearance: none;
   width: 300px;
   height: 5px;
-  background: #133C65;
+  background: $navy;
   outline: 2px;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -26,12 +26,12 @@
   height: 15px;
   background: #ffffff;
   border-radius: 50px;
-  border: 1px solid #133C65;
+  border: 1px solid $navy;
 }
 
 .slider::-moz-range-thumb {
   width: 10px;
   height: 5px;
-  background: #133C65;
+  background: $navy;
   cursor: pointer;
 }

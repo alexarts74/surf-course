@@ -16,7 +16,7 @@
   color: white;
   padding: 8px 24px;
   border-radius: 8px;
-  background: #133C65;
+  background: $navy;
   transition: background 0.3s ease;
   width: 100%;
   margin-left: auto;
@@ -24,7 +24,7 @@
 }
 
 .btn-flat-white {
-  color: #133C65;
+  color: $navy;
   padding: 8px 24px;
   border-radius: 4px;
   background: #FFFFFF;
@@ -35,32 +35,17 @@
 }
 
 .btn-flat:hover {
-  background: #0f3051;
+  background: #10376a;
   color: white;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.btn-gradient {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
-  transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
-}
-
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: white;
-}
-
 .btn-form {
-  color: #133C65;
+  color: $navy;
   padding: 4px 12px;
-  border: 1px solid #133C65;
+  border: 1px solid $navy;
   border-radius: 20px;
   background: #FFFFFF;
   transition: background 0.3s ease;
@@ -70,7 +55,7 @@
 }
 
 .btn-form:hover {
-  background: #133C65;
+  background: $navy;
   color: #ffffff;
   padding: 4px 12px;
   width: 100%;
@@ -90,7 +75,7 @@
 }
 
 .btn-form-navy:hover {
-  background: #133C65;
+  background: $navy;
   color: #ffffff;
   padding: 4px 12px;
   width: 100%;
