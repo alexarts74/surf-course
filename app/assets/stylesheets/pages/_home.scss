@@ -25,14 +25,12 @@ body {
 }
 
 .maintitle {
+  padding-top: 10%;
   font-family: pacifico;
   font-size: 50px;
   text-align: center;
-  color: #ffffff;
-  margin-top: 10%;
-}
-
-h1 {
+  padding-bottom: 13%;
+  display: flex;
   color: #ffffff;
 }
 
@@ -44,12 +42,11 @@ h3 {
   color: $navy;
 }
 
-.home-page-icon {
-  margin: 0 auto;
-  height: 150px;
-  margin-bottom: 20%;
-}
+html, body { height: 100%; }
 
+// body {
+//   background:radial-gradient(ellipse at center, rgba(255,254,234,1) 0%, rgba(255,254,234,1) 35%, #B7E8EB 100%);
+// }
 .home {
   height: 100vh;
   background-image: url('surferphoto');
