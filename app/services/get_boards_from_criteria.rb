@@ -35,7 +35,7 @@ class GetBoardsFromCriteria < ApplicationService
     if @weight <= 40 && @waves == 'molles'
       Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume < 30')
     elsif  @weight <= 40 && @waves == 'creuses'
-      Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume < 25')#prendre en compte l'objectif ?
+      Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume < 25')
     elsif  @weight >= 70 && @objective == 'performance'
       Surfboard.where('dimension_length > 5 AND dimension_length < 8 AND volume > 35 AND volume < 60')
     elsif  @weight >= 70 && @objective == 'plaisir'

@@ -6,9 +6,10 @@ class GetWetsuitsFromCriteria < ApplicationService
   end
 
   def call
-    if @temperature >= 5 && @temperature <= 13
+    case @temperature
+    when "cold"
       wetsuits_cold
-    elsif @temperature > 13 && @temperature <= 20
+    when "temp"
       wetsuits_basic
     else
       wetsuits_hot
@@ -16,26 +17,20 @@ class GetWetsuitsFromCriteria < ApplicationService
   end
 
   def wetsuits_cold
-    if @gender == "men"
-      Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 5")
-    else
-      Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 5")
-    end
+    Wetsuit.where("name #{'NOT' if men?} ILIKE '%ladies%' AND thickness >= 5")
   end
 
   def wetsuits_basic
-    if @gender == "men"
-      Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 3 AND thickness < 5")
-    else
-      Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 3 AND thickness < 5")
-    end
+    Wetsuit.where("name #{'NOT' if men?} ILIKE '%ladies%' AND thickness >= 3 AND thickness < 5")
   end
 
   def wetsuits_hot
-    if @gender == "men"
-      Wetsuit.where("name NOT ILIKE 'ladies' AND thickness >= 0 AND thickness < 3")
-    else
-      Wetsuit.where("name ILIKE '%ladies%' AND thickness >= 0 AND thickness < 3")
-    end
+    Wetsuit.where("name #{'NOT' if men?} ILIKE '%ladies%' AND thickness >= 0 AND thickness < 3")
+  end
+
+  private
+
+  def men?
+    @gender == 'men'
   end
 end
