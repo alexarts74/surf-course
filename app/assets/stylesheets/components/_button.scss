@@ -82,3 +82,17 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.btn-flat:disabled {
+  background-color: #efefef;
+ }
+
+ .btn-flat:disabled::before {
+  content: 'lalalala';
+ }
+
+ .button-result {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+ }
