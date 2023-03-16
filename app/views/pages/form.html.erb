@@ -7,8 +7,8 @@
   <div class="card">
     <div data-controller="hello">
     <%= form_with url: "/results", method: :get do |f| %>
+        <%= f.label :gender, " Tu t'identifies en tant que ?", class:"element-bold" %>
       <div class="gender">
-        <%= f.label :gender, " Tu t'identifies en tant que ?" %>
         <%= f.radio_button :gender, "men", class: "radio" %>
         <%= f.label :gender, value: "men", class: "label-image" do %>
           <%= image_tag 'avatar_homme.png' %>
@@ -19,21 +19,21 @@
         <% end %>
       </div>
 
-      <div class="card" data-controller="slider">
-        <div class="slidecontainer">
-          <%= f.label :weight, 'Ton poids est ? (kg)' %>
-          <p data-slider-target="value"></p>
-          <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: { action: "input->slider#update"} %>
+      <%= f.label :weight, 'Ton poids est ? (kg)', class:"element-bold" %>
+      <div class="slidecontainer" data-controller="slider">
+        <div class="container-output" data-slider-target="containerOutput">
+          <p class="output" data-slider-target="output"></p>
         </div>
+        <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: {action: "input->slider#update", slider_target: 'input'} %>
       </div>
 
-        <div class="card"  data-controller="slider">
-          <div class="slidecontainer">
-          <%= f.label :weight, 'Tu mesures ? (cm)' %>
-          <p data-slider-target="value"></p>
-            <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update"}  %>
-          </div>
+      <%= f.label :size, 'Tu mesures ? (cm)', class:"element-bold" %>
+      <div class="slidecontainer" data-controller="slider">
+        <div class="container-output" data-slider-target="containerOutput">
+          <p class="output" data-slider-target="output"></p>
         </div>
+        <%= f.range_field :size, min: 120, max: 230, class: "slider", data: {action: "input->slider#update", slider_target: 'input'} %>
+      </div>
 
           <div class="card">
               <div data-action="click->hello#update">
@@ -50,7 +50,7 @@
           </div>
 
           <div class="card d-none" data-hello-target="level">
-              <%= f.label :waves, 'Ton type de vagues ?', class:"type-wave"%>
+              <%= f.label :waves, 'Ton type de vagues ?', class:"element-bold"%>
             <div class="waves">
               <%= f.radio_button :waves, "molle", class:"radio"%>
               <%= f.label :waves, "Molles", class: "filter-level", value: "molle"%>

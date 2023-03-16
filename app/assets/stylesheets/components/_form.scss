@@ -4,7 +4,6 @@ label {
 
 .card {
   border: none;
-  margin-bottom: 13px;
 }
 
 .form {
@@ -61,9 +60,10 @@ label {
 .gender {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 63px;
   margin-bottom: 22px;
   font-weight: bold;
+  margin-top: 17px;
 }
 
 .level {
@@ -110,7 +110,7 @@ font-weight: bold;
   font-weight: bold;
  }
 
- .type-wave {
+ .element-bold {
   font-weight: bold;
  }
 
