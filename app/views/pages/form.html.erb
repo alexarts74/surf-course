@@ -4,16 +4,16 @@
       <h3>Salut jeune surfeur, j’ai besoin d’en savoir davantage sur toi, discutons ensemble ! </h3>
     </div>
   </div>
-  <div class="card">
+  <div class="card" >
     <div data-controller="hello">
-    <%= form_with url: "/results", method: :get do |f| %>
-        <%= f.label :gender, " Tu t'identifies en tant que ?", class:"element-bold" %>
+    <%= form_with url: "/results", method: :get, data: {controller: "check"} do |f|%>
       <div class="gender">
-        <%= f.radio_button :gender, "men", class: "radio" %>
+        <%= f.label :gender, " Tu t'identifies en tant que ?" %>
+        <%= f.radio_button :gender, "men", class: "radio", data: { action: "change->check#verify"} %>
         <%= f.label :gender, value: "men", class: "label-image" do %>
           <%= image_tag 'avatar_homme.png' %>
         <% end %>
-        <%= f.radio_button :gender, "women", class: "radio" %>
+        <%= f.radio_button :gender, "women", class: "radio", data: { action: "change->check#verify"} %>
         <%= f.label :gender, "Femme", value: "women", class:"label-image" do  %>
           <%= image_tag 'avatar_femme.png' %>
         <% end %>
@@ -24,7 +24,7 @@
         <div class="container-output" data-slider-target="containerOutput">
           <p class="output" data-slider-target="output"></p>
         </div>
-        <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: {action: "input->slider#update", slider_target: 'input'} %>
+          <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: { action: "input->slider#update", slider_target: 'input'}, data: { action: "change->check#verify" } %>
       </div>
 
       <%= f.label :size, 'Tu mesures ? (cm)', class:"element-bold" %>
@@ -32,70 +32,70 @@
         <div class="container-output" data-slider-target="containerOutput">
           <p class="output" data-slider-target="output"></p>
         </div>
-        <%= f.range_field :size, min: 120, max: 230, class: "slider", data: {action: "input->slider#update", slider_target: 'input'} %>
+          <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update", slider_target: "input" }, data: { action: "change->check#verify" }  %>
       </div>
 
-          <div class="card">
-              <div data-action="click->hello#update">
-                  <%= f.label :level, "Tu te sens comment sur ta planche ?", class:"question-level" %><br/>
-                <div class="level-question">
-                  <%= f.radio_button :level, "Débutant", class:"radio", data: { hello_target: "deb" } %>
-                  <%= f.label :level, "Débutant", class: "filter-level", value: "Débutant"%>
-                  <%= f.radio_button :level, "Intermédiaire", class:"radio"%>
-                  <%= f.label :level, "Intermédiaire", class: "filter-level", value: "Intermédiaire" %>
-                  <%= f.radio_button :level, "Confirmé", class:"radio"%>
-                  <%= f.label :level, "Confirmé",class: "filter-level", value: "Confirmé" %>
-                </div>
-              </div>
-          </div>
-
-          <div class="card d-none" data-hello-target="level">
-              <%= f.label :waves, 'Ton type de vagues ?', class:"element-bold"%>
-            <div class="waves">
-              <%= f.radio_button :waves, "molle", class:"radio"%>
-              <%= f.label :waves, "Molles", class: "filter-level", value: "molle"%>
-              <%= f.radio_button :waves, "creuse", class:"radio" %>
-              <%= f.label :waves, "Creuses", class: "filter-level", value: "creuse" %>
-            </div>
-
-
-            <div data-hello-target="level">
-              <%= f.label :objective, 'Tu es de la team ?', class:"objectif-bold"%>
-              <div class="objectif">
-                <%= f.radio_button :objective, "Plaisir", class:"radio"  %>
-                <%= f.label :objective, "Plaisir", class: "filter-level", value: "Plaisir"%>
-                <%= f.radio_button :objective, "Performance", class:"radio" %>
-                <%= f.label :objective, "Performance", class: "filter-level", value: "Performance" %>
-              </div>
+      <div class="card">
+          <div data-action="click->hello#update">
+              <%= f.label :level, "Tu te sens comment sur ta planche ?", class:"question-level" %><br/>
+            <div class="level-question">
+              <%= f.radio_button :level, "Débutant", class:"radio", data: { hello_target: "deb", action: "change->check#verify"}%>
+              <%= f.label :level, "Débutant", class: "filter-level", value: "Débutant"%>
+              <%= f.radio_button :level, "Intermédiaire", class:"radio", data: { action: "change->check#verify" } %>
+              <%= f.label :level, "Intermédiaire", class: "filter-level", value: "Intermédiaire" %>
+              <%= f.radio_button :level, "Confirmé", class:"radio", data: { action: "change->check#verify" } %>
+              <%= f.label :level, "Confirmé",class: "filter-level", value: "Confirmé" %>
             </div>
           </div>
+      </div>
 
-            <div class="temperature">
-              <%= f.label :temperature, "Plutôt eau froide ou eau chaude ?" %>
-              <div data-hello-target="level" class="level" >
-                <%= f.radio_button :temperature, "5 - 13", class:"radio" %>
-                <%= f.label :temperature, "5 - 13", value: "5 - 13", class:"label-image d-flex flex-column" do %>
-                  <%= image_tag 'avatar_froid.png'%>
-                  <span>5° et 13°</span>
-                <% end %>
-                <%= f.radio_button :temperature, "13 - 20", class:"radio" %>
-                <%= f.label :temperature, "13 - 20", value: "13 - 20", class:"label-image d-flex flex-column" do %>
-                  <%= image_tag 'avatar_mid.png' %>
-                  <span>13° et 20°</span>
-                <% end %>
-                <%= f.radio_button :temperature, "20 et +", class:"radio" %>
-                <%= f.label :temperature, "20 et +", value: "20 et +", class:"label-image d-flex flex-column" do %>
-                  <%= image_tag 'temperature-chaude.png' %>
-                  <span>20° et +</span>
-                <% end %>
-              </div>
+      <div class="card d-none" data-hello-target="level">
+          <%= f.label :waves, 'Ton type de vagues ?', class:"element-bold"%>
+        <div class="waves">
+          <%= f.radio_button :waves, "molle", class:"radio", data: { action: "change->check#verify"}%>
+          <%= f.label :waves, "Molles", class: "filter-level", value: "molle"%>
+          <%= f.radio_button :waves, "creuse", class:"radio", data: { action: "change->check#verify"}%>
+          <%= f.label :waves, "Creuses", class: "filter-level", value: "creuse" %>
+        </div>
+
+
+          <div data-hello-target="level">
+            <%= f.label :objective, 'Tu es de la team ?', class:"objectif-bold"%>
+            <div class="objectif">
+              <%= f.radio_button :objective, "Plaisir", class:"radio", data: { action: "change->check#verify"} %>
+              <%= f.label :objective, "Plaisir", class: "filter-level", value: "Plaisir"%>
+              <%= f.radio_button :objective, "Performance", class:"radio", data: { action: "change->check#verify"} %>
+              <%= f.label :objective, "Performance", class: "filter-level", value: "Performance" %>
             </div>
-
-        <div class="card">
-          <div class="d-flex justify-content-center">
-            <%= f.submit "voir les résultats", class: "btn btn-flat" %>
           </div>
         </div>
+
+          <div class="temperature">
+            <%= f.label :temperature, "Plutôt eau froide ou eau chaude ?" %>
+            <div data-hello-target="level" class="level" >
+              <%= f.radio_button :temperature, "cold", class:"radio", data: { action: "change->check#verify"} %>
+              <%= f.label :temperature, "cold", value: "cold", class:"label-image d-flex flex-column" do %>
+                <%= image_tag 'avatar_froid.png'%>
+                <span>5° et 13°</span>
+              <% end %>
+              <%= f.radio_button :temperature, "temp", class:"radio", data: { action: "change->check#verify"} %>
+              <%= f.label :temperature, "temp", value: "temp", class:"label-image d-flex flex-column" do %>
+                <%= image_tag 'avatar_mid.png' %>
+                <span>13° et 20°</span>
+              <% end %>
+              <%= f.radio_button :temperature, "20 et +", class:"radio", data: { action: "change->check#verify"} %>
+              <%= f.label :temperature, "20 et +", value: "20 et +", class:"label-image d-flex flex-column" do %>
+                <%= image_tag 'temperature-chaude.png' %>
+                <span>20° et +</span>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="d-flex justify-content-center">
+              <%= f.submit "voir les résultats", class: "btn btn-flat", disabled: true, data: { check_target: "submit" } %>
+            </div>
+          </div>
       <% end %>
     </div>
   </div>

@@ -1,0 +1,16 @@
+.formcontainer {
+  padding: 5% 25% 10%;
+  justify-content: center;
+  background-color: white;
+  opacity: .20%;
+}
+
+.results-image {
+  width: 225px;
+  height: fit-content;
+  display: flex;
+}
+
+h2, .formcontainer {
+  text-align: center;
+}
