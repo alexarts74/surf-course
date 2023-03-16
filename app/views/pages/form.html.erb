@@ -7,8 +7,8 @@
   <div class="card" >
     <div data-controller="hello">
     <%= form_with url: "/results", method: :get, data: {controller: "check"} do |f|%>
+      <%= f.label :gender, " Tu t'identifies en tant que ?", class: "element-bold" %>
       <div class="gender">
-        <%= f.label :gender, " Tu t'identifies en tant que ?" %>
         <%= f.radio_button :gender, "men", class: "radio", data: { action: "change->check#verify"} %>
         <%= f.label :gender, value: "men", class: "label-image" do %>
           <%= image_tag 'avatar_homme.png' %>
@@ -24,7 +24,7 @@
         <div class="container-output" data-slider-target="containerOutput">
           <p class="output" data-slider-target="output"></p>
         </div>
-          <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: { action: "input->slider#update", slider_target: 'input'}, data: { action: "change->check#verify" } %>
+        <%= f.range_field :weight, min: 30, max: 150, class: "slider", data: { action: "input->slider#update change->check#verify" , slider_target: 'input'} %>
       </div>
 
       <%= f.label :size, 'Tu mesures ? (cm)', class:"element-bold" %>
@@ -32,7 +32,7 @@
         <div class="container-output" data-slider-target="containerOutput">
           <p class="output" data-slider-target="output"></p>
         </div>
-          <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update", slider_target: "input" }, data: { action: "change->check#verify" }  %>
+          <%= f.range_field :size, min: 120, max: 230, class: "slider", data: { action: "input->slider#update change->check#verify", slider_target: "input" } %>
       </div>
 
       <div class="card">
