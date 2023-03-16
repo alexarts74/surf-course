@@ -17,7 +17,7 @@ label {
   border-radius: 50px;
   color: $navy;
   background-color: white;
-  border: 1px solid #133C65;
+  border: 1px solid $navy;
   padding: 3px 3px 3px 3px;
   width: 200px;
   margin-top: 15px;
@@ -54,7 +54,7 @@ label {
 }
 
 .radio:checked + .filter-level {
-  background-color: #133C65;
+  background-color: $navy;
   color: white;
 }
 .gender {
