@@ -1,15 +1,11 @@
 <div class="container">
-  <h2 class="title-result">Voici ta planche de surf et ta combi idéale !</h2>
+  <h2 class="title-result">Voici ta planche de surf idéale !</h2>
 
   <div class="conditions-1">
-    <% if params[:weight].present? && params[:size].present? %>
-      <p>Ces planches sont parfaites pour un poid de <%= params[:weight] %>kg et une taille de <%= params[:size] %>cm.</p>
-    <% end %>
-    <% if params[:level].present? && params[:waves].present? %>
-      <p>Avec un niveau <%= params[:level].downcase %> tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
-    <% end %>
-    <% if params[:objective].present? %>
-      <p>Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <%= params[:objective].downcase %>.</p>
+    <% if params[:weight].present? && params[:size].present? && params[:level].present? && params[:waves].present? && params[:objective].present?%>
+      <p>Ces planches sont parfaites pour un poid de <%= params[:weight] %>kg et une taille de <%= params[:size] %>cm.
+      Avec un niveau <%= params[:level].downcase %> tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !
+      Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <%= params[:objective].downcase %>.</p>
     <% end %>
   </div>
 
@@ -27,8 +23,14 @@
         </div>
       <% end %>
     </div>
+    <div class="swipe">
+      <%= image_tag 'fleche-droite', class: "fleche-img" %>
+      <p>Fais défiler pour en voir plus !</p>
+    </div>
   </div>
 
+
+  <h2 class="title-result-2"> Voici la combi pile pour toi !</h2>
   <div class="conditions-2">
     <% if params[:temperature] == "cold" %>
       <p>Ta combi a été sélectionnée pour ton confort dans les eaux les plus froides.</p>
@@ -53,8 +55,13 @@
         </div>
       <% end %>
     </div>
+    <div class="swipe">
+      <%= image_tag 'fleche-droite', class: "fleche-img" %>
+      <p>Fais défiler pour en voir plus !</p>
+    </div>
   </div>
 </div>
+
 
 <div class="footer-result">
   <%= link_to root_path do %>
