@@ -1,10 +1,13 @@
 .title-result {
+  color: $navy;
   margin-top: 10%;
+  margin-bottom: 15%;
+  text-align: center;
 }
 
 .conditions-2{
   margin: 30px 30px;
-  text-align: center;
+  text-align: initial;
 }
 .conditions-1{
   margin-top: -20px;
@@ -22,8 +25,7 @@ h1 {
 .wetsuit {
   display: block;
   background-color: white;
-  margin-left: 35px;
-  margin-right: 35px;
+  margin: 1rem 35px;
   border-radius: 8px;
   box-shadow: 0px 0px 18px #0002;
 }
@@ -42,14 +44,18 @@ h1 {
 }
 
 .button-card {
-  display: flex ;
   text-align: center;
+  padding: 12px 8px;
+  border-radius: 8px;
+  border: none;
+  background-color: $navy;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 100%;
+  display: flex ;
   color: white;
   font-weight: bold;
   text-decoration: none;
-  background-color: #000080;
-  padding: 8px 12px;
-  border-radius: 6px;
+  justify-content: center;
 }
 
 .last-element {
@@ -58,14 +64,16 @@ h1 {
 
 
 .board-container {
-  width: 400px;
   overflow: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
   margin-bottom: 60px;
   .boards {
     display: flex;
     gap: 40px;
     overflow-y: scroll;
-    height: 550px;
+    scroll-snap-align: center;
+    // height: 550px;
   }
   .wetsuits {
     display: flex;
@@ -77,22 +85,29 @@ h1 {
       flex: none;
       display: block;
       background-color: white;
-      margin-left: 35px;
-      margin-right: 35px;
+      margin: 1rem 35px;
       border-radius: 8px;
       box-shadow: 0px 0px 18px #0002;
     }
 }
 
 .footer-result {
-  background: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $navy;;
   width: auto;
-  height: 200px;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  height: 140px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  gap: 10px;
 
   .img-footer {
     height: 50px;
-    width: 270px;
+    width: 70px;
+  }
+  .img-text-footer{
+    height: 30px;
+    width: 150px;
   }
 }
