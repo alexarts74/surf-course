@@ -44,7 +44,7 @@ h1 {
 .board-cara {
   margin: 0 auto;
   width: 250px;
-  padding: 1rem 0;
+  // padding: 0.5rem 0;
 }
 
 .image {
@@ -54,22 +54,26 @@ h1 {
 }
 
 .button-card {
-  text-align: center;
-  padding: 12px 8px;
-  border-radius: 8px;
-  border: none;
-  background-color: $navy;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  width: 100%;
-  display: flex ;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  justify-content: center;
+  // text-align: center;
+  // padding: 12px 8px;
+  // border-radius: 8px;
+  // border: none;
+  // background-color: $navy;
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  // width: 100%;
+  // display: flex ;
+  // color: white;
+  // font-weight: bold;
+  // text-decoration: none;
+  // justify-content: center;
 }
 
 .last-element {
   margin-bottom: 24px;
+}
+
+.last-element-2 {
+  margin-bottom: -30px;
 }
 
 .fleche-img {
@@ -105,7 +109,7 @@ h1 {
     height: 600px;
   }
     .board {
-      display: block;
+      // display: block;
       background-color: white;
       margin: 1rem 35px;
       border-radius: 8px;
