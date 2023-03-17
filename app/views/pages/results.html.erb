@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="title-result">Voici ta planche de surf idéale !</h2>
+  <h2 class="title-result">Voici notre sélection de planches de surf idéales !</h2>
 
   <div class="conditions-1">
     <% if params[:weight].present? && params[:size].present? && params[:level].present? && params[:waves].present? && params[:objective].present?%>
@@ -10,6 +10,10 @@
   </div>
 
   <div class="board-container">
+    <div class="swipe">
+      <%= image_tag 'fleche-droite.png', class: "fleche-img" %>
+      <p>Défile pour en voir !</p>
+    </div>
     <div class="boards">
       <% @boards.take(10).each do |board| %>
         <div class="board">
@@ -18,14 +22,10 @@
             <p><strong>Nom : </strong> <%= board.name %></p>
             <p><strong>Dimensions de la planche : </strong> <%= board.dimension_length %>ft/ <%= board.dimension_height %>/ <%= board.dimension_thickness %></p>
             <p class="last-element"><strong>Volume de la planche : </strong> <%= board.volume %> litres</p>
-            <a class="button-card" href="https://www.boardshop.co.uk/surfboards">Je choisis cette planche !</a>
+            <a class="button-card" href="https://www.boardshop.co.uk/surfboards">En savoir plus</a>
           </div>
         </div>
       <% end %>
-    </div>
-    <div class="swipe">
-      <%= image_tag 'fleche-droite.png', class: "fleche-img" %>
-      <p>Défile pour en voir plus de boards !</p>
     </div>
   </div>
 
@@ -42,6 +42,10 @@
   </div>
 
   <div class="board-container">
+    <div class="swipe">
+      <%= image_tag 'fleche-droite.png', class: "fleche-img" %>
+      <p>Défile pour en voir plus !</p>
+    </div>
     <div class="wetsuits">
       <% @wetsuits.take(10).each do |wetsuit| %>
         <div class="wetsuit">
@@ -51,13 +55,9 @@
             <p><strong>Epaisseur de la combinaison : </strong> <%= wetsuit.thickness %> mm</p>
             <p class="last-element"><strong>Emplacement du zip : </strong> <%= wetsuit.zip %></p>
           </div>
-          <a class="button-card" style="bottom: 0" href="https://www.boardshop.co.uk/wetsuits">Je choisis cette combi !</a>
+          <a class="button-card" style="bottom: 0" href="https://www.boardshop.co.uk/wetsuits">En savoir plus</a>
         </div>
       <% end %>
-    </div>
-    <div class="swipe">
-      <%= image_tag 'fleche-droite.png', class: "fleche-img" %>
-      <p>Défile pour en voir plus de combis !</p>
     </div>
   </div>
 </div>
