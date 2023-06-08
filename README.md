@@ -1,1 +1,1 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+The Surf Course is a rails application that provides recommendations on the choice of surf equipment (boards and wetsuits). It's designed for beginners, intermediates and advanced surfers. All the user has to do is fill in a form, and the application takes care of the rest, suggesting suitable items.
