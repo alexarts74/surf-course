@@ -10,11 +10,11 @@ class GetBoardsFromCriteria < ApplicationService
 
   def call
     case @level
-    when "Débutant"
+    when 'Débutant'
       beginner_boards
     when 'Intermédiaire'
       medium_boards
-    else
+    when 'Confirmé'
       advanced_boards
     end
   end
@@ -36,13 +36,13 @@ class GetBoardsFromCriteria < ApplicationService
       Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume < 30')
     elsif  @weight <= 40 && @waves == 'creuses'
       Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume < 25')
-    elsif  @weight >= 70 && @objective == 'performance'
+    elsif  @weight >= 70 && @objective == 'Performance'
       Surfboard.where('dimension_length > 5 AND dimension_length < 8 AND volume > 35 AND volume < 60')
-    elsif  @weight >= 70 && @objective == 'plaisir'
+    elsif  @weight >= 70 && @objective == 'Plaisir'
       Surfboard.where('dimension_length > 5 AND dimension_length < 8.6 AND volume > 40 AND volume < 60')
-    elsif @weight > 40 && @weight < 70 && @objective == 'performance'
+    elsif @weight > 40 && @weight < 70 && @objective == 'Performance'
       Surfboard.where('dimension_length > 5.5 AND dimension_length < 6.10 AND volume > 25 AND volume < 35')
-    elsif @weight > 40 && @weight < 70 && @objective == 'cruise' && @waves == 'molle'
+    elsif @weight > 40 && @weight < 70 && @objective == 'Plaisir' && @waves == 'molle'
       Surfboard.where('dimension_length > 5.5 AND dimension_length < 8.6 AND volume > 30 AND volume < 50')
     else
       Surfboard.where('dimension_length > 5 AND dimension_length < 8 AND volume > 25 AND volume < 45')
@@ -52,11 +52,11 @@ class GetBoardsFromCriteria < ApplicationService
   def advanced_boards
     if @weight <= 40
       Surfboard.where('dimension_length > 5 AND dimension_length < 6.6 AND volume > 15 AND volume < 25')
-    elsif @weight > 40 && @weight <= 70 && @objective == 'performance'
+    elsif @weight > 40 && @weight <= 70 && @objective == 'Performance'
       Surfboard.where('dimension_length > 5 AND dimension_length < 6.10 AND volume > 20 AND volume < 30')
-    elsif @weight > 40 && @weight <= 70 && @objective == 'plaisir'
+    elsif @weight > 40 && @weight <= 70 && @objective == 'Plaisir'
       Surfboard.where('dimension_length > 5 AND dimension_length < 7 AND volume > 25 AND volume < 35')
-    elsif @weight > 70 && @objective == 'plaisir'
+    elsif @weight > 70 && @objective == 'Plaisir'
       Surfboard.where('dimension_length > 5 AND dimension_length < 8.6 AND volume > 35 AND volume < 50')
     else
       Surfboard.where('dimension_length > 5 AND dimension_length < 6.10 AND volume > 35 AND volume < 45')

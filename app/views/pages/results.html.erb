@@ -4,7 +4,7 @@
   <div class="conditions-1">
     <% if params[:weight].present? && params[:size].present? && params[:level].present? && params[:waves].present? && params[:objective].present?%>
       <p>Ces planches sont parfaites pour un poid de <strong><%= params[:weight] %>kg</strong> et une taille de <strong><%= params[:size] %>cm.</strong></p>
-      <p>Avec un niveau <%= params[:level].downcase %> tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
+      <p>Avec un niveau <strong><%= params[:level].downcase %> </strong>tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
       <p>Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <strong><%= params[:objective].downcase %></strong>.</p>
     <% end %>
   </div>
@@ -15,7 +15,7 @@
       <p>Défile pour en voir !</p>
     </div>
     <div class="boards">
-      <% @boards.take(10).each do |board| %>
+      <% @boards.each do |board| %>
         <div class="board">
           <%= image_tag board.image, width: 200, height: 250, crop: :fill, class: "image" %>
           <div class="board-cara">
@@ -25,7 +25,7 @@
             <a class="button-card" href="https://www.boardshop.co.uk/surfboards">En savoir plus</a>
           </div>
         </div>
-      <% end %>
+       <% end %>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
       <p>Défile pour en voir plus !</p>
     </div>
     <div class="wetsuits">
-      <% @wetsuits.take(10).each do |wetsuit| %>
+      <% @wetsuits.each do |wetsuit| %>
         <div class="wetsuit">
           <%= image_tag wetsuit.image, width: 200, height: 250, crop: :fill, class: "image"%>
           <div class="board-cara">
