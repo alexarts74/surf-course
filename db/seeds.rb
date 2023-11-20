@@ -1,33 +1,98 @@
 Surfboard.destroy_all
 Wetsuit.destroy_all
 
-surfboard_deb = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 60, dimension_length: 7.4, dimension_height: 25.5, dimension_thickness: 4.35, price: 350, image: "olaian.jpeg")
-surfboard_deb_weight = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 80, dimension_length: 8.6, dimension_height: 28.5, dimension_thickness: 6.35, price: 375, image: "surfboard-deb-weight.jpeg")
-surfboard_norm_weight = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 70, dimension_length: 7.8, dimension_height: 27.0, dimension_thickness: 5.35, price: 365, image: "surfborad-deb-norm.jpeg")
+surfboard_deb = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 60, dimension_length: 7.4, dimension_height: 25.5, dimension_thickness: 4.35, price: 350)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/olaian.jpeg"))
+surfboard_deb.image.attach(io: URI.open(board_image['secure_url']), filename: "olaian.jpeg", content_type: "image/jpeg")
 
-surfboard_int = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 29, dimension_length: 5.6, dimension_height: 17.5, dimension_thickness: 3.35, price: 520, image: "surf-int.jpeg")
-surfboard_int_1 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 24, dimension_length: 5.7, dimension_height: 18.5, dimension_thickness: 3, price: 530, image: "shortboard-1.jpeg")
-surfboard_int_2 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 36, dimension_length: 7.0, dimension_height: 19.5, dimension_thickness: 3.35, price: 540, image: "surf-int-2.jpeg")
-surfboard_int_3 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 45, dimension_length: 7.6, dimension_height: 22.5, dimension_thickness: 3.35, price: 550, image: "surf-int-4.jpeg")
-surfboard_int_4 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 32, dimension_length: 6.0, dimension_height: 22.5, dimension_thickness: 3.35, price: 560, image: "surf-int-5.jpeg")
-surfboard_int_5 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 40, dimension_length: 7.2, dimension_height: 22.5, dimension_thickness: 3.35, price: 570, image: "surf-int-6.jpeg")
-surfboard_int_6 = Surfboard.create(url: "test", name: "Prism", level: "Intermédiaire", volume: 30, dimension_length: 6.6, dimension_height: 22.5, dimension_thickness: 3.35, price: 580, image: "surf-int-7.jpeg")
+surfboard_deb_weight = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 80, dimension_length: 8.6, dimension_height: 28.5, dimension_thickness: 6.35, price: 375)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surfboard-deb-weight.jpeg"))
+surfboard_deb_weight.image.attach(io: URI.open(board_image['secure_url']), filename: "surfboard-deb-weight.jpeg", content_type: "image/jpeg")
 
-surfboard_pro = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 24, dimension_length: 6.0, dimension_height: 19.5, dimension_thickness: 2.35, price: 750, image: "surf-pro.jpeg")
-surfboard_pro_1 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 29.9, dimension_length: 6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750, image: "surf-pro-1.jpeg")
-surfboard_pro_2 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 31, dimension_length: 6.6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750, image: "surf-pro-2.jpeg")
-surfboard_pro_3 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 41, dimension_length: 7.0, dimension_height: 19.5, dimension_thickness: 2.35, price: 750, image: "surf-pro-4.jpeg")
-surfboard_pro_4 = Surfboard.create(url: "test", name: "Uwl", level: "Confirmé", volume: 40, dimension_length: 6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750, image: "surf-pro-5.jpeg")
+surfboard_norm_weight = Surfboard.create(url: "test", name: "Olaian", level: "Débutant", volume: 70, dimension_length: 7.8, dimension_height: 27.0, dimension_thickness: 5.35, price: 365)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surfborad-deb-norm.jpeg"))
+surfboard_norm_weight.image.attach(io: URI.open(board_image['secure_url']), filename: "surfborad-deb-norm.jpeg", content_type: "image/jpeg")
+
+puts "surfboard deb ok"
+
+surfboard_int = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 29, dimension_length: 5.6, dimension_height: 17.5, dimension_thickness: 3.35, price: 520)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int.jpeg"))
+surfboard_int.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int.jpeg", content_type: "image/jpeg")
+
+surfboard_int_1 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 24, dimension_length: 5.7, dimension_height: 18.5, dimension_thickness: 3, price: 530)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/shortboard-1.jpeg"))
+surfboard_int_1.image.attach(io: URI.open(board_image['secure_url']), filename: "shortboard-1.jpeg", content_type: "image/jpeg")
+
+surfboard_int_2 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 36, dimension_length: 7.0, dimension_height: 19.5, dimension_thickness: 3.35, price: 540)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int-2.jpeg"))
+surfboard_int_2.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int-2.jpeg", content_type: "image/jpeg")
+
+surfboard_int_3 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 45, dimension_length: 7.6, dimension_height: 22.5, dimension_thickness: 3.35, price: 550)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int-4.jpeg"))
+surfboard_int_3.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int-4.jpeg", content_type: "image/jpeg")
+
+surfboard_int_4 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 32, dimension_length: 6.0, dimension_height: 22.5, dimension_thickness: 3.35, price: 560)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int-5.jpeg"))
+surfboard_int_4.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int-5.jpeg", content_type: "image/jpeg")
+
+surfboard_int_5 = Surfboard.create(url: "test", name: "Olaian", level: "Intermédiaire", volume: 40, dimension_length: 7.2, dimension_height: 22.5, dimension_thickness: 3.35, price: 570)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int-6.jpeg"))
+surfboard_int_5.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int-6.jpeg", content_type: "image/jpeg")
+
+surfboard_int_6 = Surfboard.create(url: "test", name: "Prism", level: "Intermédiaire", volume: 30, dimension_length: 6.6, dimension_height: 22.5, dimension_thickness: 3.35, price: 580)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-int-7.jpeg"))
+surfboard_int_6.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-int-7.jpeg", content_type: "image/jpeg")
+
+puts "surfboard int ok"
+
+surfboard_pro = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 24, dimension_length: 6.0, dimension_height: 19.5, dimension_thickness: 2.35, price: 750)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-pro.jpeg"))
+surfboard_pro.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-pro.jpeg", content_type: "image/jpeg")
+
+surfboard_pro_1 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 29.9, dimension_length: 6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-pro-1.jpeg"))
+surfboard_pro_1.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-pro-1.jpeg", content_type: "image/jpeg")
+
+surfboard_pro_2 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 31, dimension_length: 6.6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-pro-2.jpeg"))
+surfboard_pro_2.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-pro-2.jpeg", content_type: "image/jpeg")
+
+surfboard_pro_3 = Surfboard.create(url: "test", name: "Pyzel", level: "Confirmé", volume: 41, dimension_length: 7.0, dimension_height: 19.5, dimension_thickness: 2.35, price: 750)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-pro-4.jpeg"))
+surfboard_pro_3.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-pro-4.jpeg", content_type: "image/jpeg")
+
+surfboard_pro_4 = Surfboard.create(url: "test", name: "Uwl", level: "Confirmé", volume: 40, dimension_length: 6, dimension_height: 19.5, dimension_thickness: 2.35, price: 750)
+board_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/surf-pro-5.jpeg"))
+surfboard_pro_4.image.attach(io: URI.open(board_image['secure_url']), filename: "surf-pro-5.jpeg", content_type: "image/jpeg")
+
+puts "surfboard pro ok"
+
+wetsuit_cold = Wetsuit.create(url: "test", name: "Hurley", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold.jpeg"))
+wetsuit_cold.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold.jpeg", content_type: "image/jpeg")
+
+wetsuit_temp = Wetsuit.create(url: "test_2", name: "Hurley", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/hurley4:3.jpeg"))
+wetsuit_temp.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "hurley4:3.jpeg", content_type: "image/jpeg")
+
+wetsuit_hot = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/shorty.jpeg"))
+wetsuit_hot.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "shorty.jpeg", content_type: "image/jpeg")
 
 
-wetsuit_cold = Wetsuit.create(url: "test", name: "Hurley", thickness: 5.4, zip: "frontzip", price: 400, image: "wetsuit-cold.jpeg")
-wetsuit_temp = Wetsuit.create(url: "test_2", name: "Hurley", thickness: 4.3, zip: "frontzip", price: 220, image: "hurley4:3.jpeg")
-wetsuit_hot = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 2.2, zip: "frontzip", price: 200, image: "shorty.jpeg")
+wetsuit_cold_women = Wetsuit.create(url: "test", name: "Hurley ladies winter", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold-women.jpg"))
+wetsuit_cold_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold-women.jpg", content_type: "image/jpg")
 
-wetsuit_cold_women = Wetsuit.create(url: "test", name: "Hurley ladies winter", thickness: 5.4, zip: "frontzip", price: 400, image: "wetsuit-cold-women.jpg")
-wetsuit_temp_women = Wetsuit.create(url: "test_2", name: "Hurley ladies spring", thickness: 4.3, zip: "frontzip", price: 220, image: "wetsuit-temp-women.jpeg")
-wetsuit_hot_women = Wetsuit.create(url: "test_3", name: "Hurley ladies summer", thickness: 2.2, zip: "frontzip", price: 200, image: "wetsuit-hot-women.jpg")
+wetsuit_temp_women = Wetsuit.create(url: "test_2", name: "Hurley ladies spring", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-temp-women.jpg"))
+wetsuit_temp_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-temp-women.jpg", content_type: "image/jpg")
 
+wetsuit_hot_women = Wetsuit.create(url: "test_3", name: "Hurley ladies summer", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-hot-women.jpg"))
+wetsuit_hot_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-hot-women.jpg", content_type: "image/jpg")
+
+puts "seed ok"
 
 # require "open-uri"
 # require "nokogiri"
