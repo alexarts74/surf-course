@@ -5,4 +5,5 @@ class Surfboard < ApplicationRecord
   validates :objective, presence: true
   validates :waves, presence: true
   validates :temperature, presence: true
+  has_one_attached :image
 end
