@@ -71,26 +71,85 @@ wetsuit_cold = Wetsuit.create(url: "test", name: "Hurley", thickness: 5.4, zip: 
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold.jpeg"))
 wetsuit_cold.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold.jpeg", content_type: "image/jpeg")
 
+wetsuit_cold = Wetsuit.create(url: "test", name: "Ion", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit cold 5:4 cold.jpeg"))
+wetsuit_cold.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit cold 5:4 cold.jpeg", content_type: "image/jpeg")
+
+wetsuit_cold = Wetsuit.create(url: "test", name: "Ion", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold-last.jpeg"))
+wetsuit_cold.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold-last.jpeg", content_type: "image/jpeg")
+
+puts "wetsuit cold men ok"
+
 wetsuit_temp = Wetsuit.create(url: "test_2", name: "Hurley", thickness: 4.3, zip: "frontzip", price: 220)
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/hurley4:3.jpeg"))
 wetsuit_temp.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "hurley4:3.jpeg", content_type: "image/jpeg")
+
+wetsuit_temp = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-men-4_3-beige.jpg"))
+wetsuit_temp.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-men-4_3-beige.jpg", content_type: "image/jpg")
+
+wetsuit_temp = Wetsuit.create(url: "test_4", name: "Hurley", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-4_3-men-ion.jpg"))
+wetsuit_temp.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-4_3-men-ion.jpg", content_type: "image/jpg")
+
+puts "wetsuit temp men ok"
 
 wetsuit_hot = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 2.2, zip: "frontzip", price: 200)
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/shorty.jpeg"))
 wetsuit_hot.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "shorty.jpeg", content_type: "image/jpeg")
 
+wetsuit_hot = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit hot men bil.jpeg"))
+wetsuit_hot.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit hot men bil.jpeg", content_type: "image/jpeg")
+
+wetsuit_hot = Wetsuit.create(url: "test_3", name: "Hurley", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-men-hot-chest.jpg"))
+wetsuit_hot.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-men-hot-chest.jpg", content_type: "image/jpg")
+
+puts "wetsuit hot men ok"
 
 wetsuit_cold_women = Wetsuit.create(url: "test", name: "Hurley ladies winter", thickness: 5.4, zip: "frontzip", price: 400)
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold-women.jpg"))
 wetsuit_cold_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold-women.jpg", content_type: "image/jpg")
 
+wetsuit_cold_women = Wetsuit.create(url: "test", name: "Hurley ladies winter", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-cold-women-hooded.jpg"))
+wetsuit_cold_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-cold-women-hooded.jpg", content_type: "image/jpg")
+
+wetsuit_cold_women = Wetsuit.create(url: "test", name: "Hurley ladies winter", thickness: 5.4, zip: "frontzip", price: 400)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-women-cold-third.jpg"))
+wetsuit_cold_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-women-cold-third.jpg", content_type: "image/jpg")
+
+puts "wetsuit cold women ok"
+
 wetsuit_temp_women = Wetsuit.create(url: "test_2", name: "Hurley ladies spring", thickness: 4.3, zip: "frontzip", price: 220)
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-temp-women.jpg"))
 wetsuit_temp_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-temp-women.jpg", content_type: "image/jpg")
 
+wetsuit_temp_women = Wetsuit.create(url: "test_2", name: "Hurley ladies spring", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-temp-women-2.jpeg"))
+wetsuit_temp_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-temp-women-2.jpeg", content_type: "image/jpeg")
+
+wetsuit_temp_women = Wetsuit.create(url: "test_2", name: "Hurley ladies spring", thickness: 4.3, zip: "frontzip", price: 220)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-women-temp-3.jpeg"))
+wetsuit_temp_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-women-temp-3.jpeg", content_type: "image/jpeg")
+
+puts "wetsuit temp women ok"
+
 wetsuit_hot_women = Wetsuit.create(url: "test_3", name: "Hurley ladies summer", thickness: 2.2, zip: "frontzip", price: 200)
 wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-hot-women.jpg"))
 wetsuit_hot_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-hot-women.jpg", content_type: "image/jpg")
+
+wetsuit_hot_women = Wetsuit.create(url: "test_3", name: "Hurley ladies summer", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-hot-women-2.jpg"))
+wetsuit_hot_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-hot-women-2.jpg", content_type: "image/jpg")
+
+wetsuit_hot_women = Wetsuit.create(url: "test_3", name: "Hurley ladies summer", thickness: 2.2, zip: "frontzip", price: 200)
+wetsuit_image = Cloudinary::Uploader.upload(Rails.root.join("app/assets/images/wetsuit-women-hot-3.jpg"))
+wetsuit_hot_women.image.attach(io: URI.open(wetsuit_image['secure_url']), filename: "wetsuit-women-hot-3.jpg", content_type: "image/jpg")
+
+puts "wetsuit hot women ok"
 
 puts "seed ok"
 
