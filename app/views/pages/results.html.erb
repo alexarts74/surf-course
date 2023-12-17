@@ -3,7 +3,7 @@
 
   <div class="conditions-1">
     <% if params[:weight].present? && params[:size].present? && params[:level].present? && params[:waves].present? && params[:objective].present?%>
-      <p>Ces planches sont parfaites pour un poid de <strong><%= params[:weight] %>kg</strong> et une taille de <strong><%= params[:size] %>cm.</strong></p>
+      <p>Ces planches sont parfaites pour un poids de <strong><%= params[:weight] %>kg</strong> et une taille de <strong><%= params[:size] %>cm.</strong></p>
       <p>Avec un niveau <strong><%= params[:level].downcase %> </strong>tu seras capable de surfer des vagues <%= params[:waves] %> sans problème !</p>
       <p>Cette planche a été sélectionnée pour que tu puisses atteindre ton objectif : <strong><%= params[:objective].downcase %></strong>.</p>
     <% end %>
