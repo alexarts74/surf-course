@@ -15,4 +15,4 @@
   skip_processing = true
 
 [context.production]
-  command = "sudo apt-get update && sudo apt-get install -y libpq-dev && bundle install && bundle exec jekyll build"
+  command = "sudo apt-get update && sudo apt-get install -y libpq-dev && gem install pg && bundle install && bundle exec jekyll build"
