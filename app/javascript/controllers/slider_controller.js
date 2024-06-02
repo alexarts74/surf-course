@@ -4,18 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["containerOutput", "output", "input"]
   connect() {
-
-    console.log('je suis dans le connect')
-    console.log(this.containerOutputTarget)
-    console.log(this.outputTarget)
-    console.log(this.inputTarget)
     this.update()
   }
-// couplé uniquement avec static targets value = uniquement la valeur affiché
-//   update(event) {
-//     this.valueTarget.innerHTML = event.currentTarget.value
-//   }
-// }
 
  update () {
     const value = parseInt(this.inputTarget.value, 10)
