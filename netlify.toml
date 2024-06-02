@@ -2,18 +2,17 @@
   command = "bundle exec jekyll build"
   publish = "_site"
 
-[context.production.environment]
-  RUBY_VERSION = "3.1.2"
-  BUNDLE_PATH = "vendor/bundle"
-  RAILS_ENV = "production"
-
 [build.environment]
   BUNDLE_PATH = "vendor/bundle"
-  RUBY_VERSION = "3.1.2"
-  RAILS_ENV = "production"
 
-[build.lifecycle]
-  onBuildCommand = "apt-get install -y libpq-dev"
+[context.production.environment]
+  NODE_VERSION = "16"
 
-[build.postbuild]
-  command = "bundle exec rails assets:precompile"
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core-packages"
+
+[build.processing]
+  skip_processing = true
+
+[context.production]
+  command = "sudo apt-get update && sudo apt-get install -y libpq-dev && bundle install && bundle exec jekyll build"
